@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 
-class Nav extends Component {
-  render() {
+function Nav() {
     return (
       <nav>
         <div className="wrap-out">
@@ -28,7 +27,6 @@ class Nav extends Component {
         </div>
       </nav>
     )
-  }
 }
 
 export default Nav;
