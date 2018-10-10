@@ -20,20 +20,26 @@ class Nav extends Component {
     })
   }
 
+  skipContent() {
+    document.querySelector('main .container').focus();
+  }
+
   render() {
     return (
       <nav>
         <div className="wrap-out">
           <div className="wrap-in">
-            <div className="content-skip" tabIndex="0">Skip to main content</div>
+            <div className="content-skip" tabIndex="0" onClick={this.skipContent}
+                onKeyDown={event => event.keyCode === 13 && this.skipContent(event)}>
+                  Skip to main content</div>
             <div className="container">
               <div className="logo">
                   <Link to="./"><img src={logo} alt="logo"/></Link>
               </div>
-                <div className="hamburger" tabIndex="0" onClick={this.toggleNavMenu}
-                    onKeyDown={event => event.keyCode === 13 && this.toggleNavMenu(event)}>
-                  <img src={hamburger} alt="hamburger icon"/>
-                </div>
+              <div className="hamburger" tabIndex="0" onClick={this.toggleNavMenu}
+                  onKeyDown={event => event.keyCode === 13 && this.toggleNavMenu(event)}>
+                <img src={hamburger} alt="hamburger icon"/>
+              </div>
               <ul className="hidden"><li>
                 <Link to='./projects'>PROJECTS</Link></li><li>
                 <Link to="./snippets">SNIPPETS</Link></li><li>
