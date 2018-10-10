@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './logo.svg';
+import hamburger from './hamburger.svg'
 
 function Nav() {
   return (
@@ -12,7 +13,7 @@ function Nav() {
             <div className="logo">
                 <Link to="./"><img src={logo} alt="logo"/></Link>
             </div>
-            <div className="hamburger" tabIndex="0"><img src="./hamburger.svg"
+            <div className="hamburger" tabIndex="0"><img src={hamburger}
                 alt="hamburger icon"/></div>
             <ul className="hidden"><li>
               <Link to='./projects'>PROJECTS</Link></li><li>
