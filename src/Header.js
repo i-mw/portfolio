@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import Headline from './Headline';
 import GoToParent from './GoToParent';
 import Logo from './Logo';
+import PersonalPhoto from './PersonalPhoto';
 
 function Header(props) {
   const {
@@ -10,13 +11,16 @@ function Header(props) {
     headlinePoints,
     primaryLang,
     parentCollection,
-    logoText
+    logoText,
+    personalImage
   } = props;
+  
   return (
     <header className={''}>
       <div className="container">
         {parentCollection && <GoToParent parentCollection={parentCollection}/>}
         {logoText && <Logo logoText={logoText}/>}
+        {personalImage && <PersonalPhoto image={personalImage}/>}
         <Headline headline={headline} headlinePoints={headlinePoints}
           primaryLang={primaryLang}/>
       </div>
@@ -29,7 +33,8 @@ Header.propTypes = {
   headlinePoints: propTypes.array,
   primaryLang: propTypes.string,
   parentCollection: propTypes.string,
-  logoText: propTypes.string
+  logoText: propTypes.string,
+  personalImage: propTypes.object
 }
 
 export default Header;
