@@ -8,7 +8,7 @@ function Headline(props) {
       <div className="wrap-in">
         <h1>{props.headline}</h1>
         {
-          props.primaryLang && <LangIndicator primaryLang={"javascript"}/>
+          props.primaryLang && <LangIndicator primaryLang={props.primaryLang}/>
         }
         {
           props.headlinePoints && (
