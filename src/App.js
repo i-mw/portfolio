@@ -54,8 +54,8 @@ const
       id: 'personalic',
       caption: '',
       url: 'https://firebasestorage.googleapis.com/v0/b/portfolio-v2-9ca05.appspot.com/o/about%2Fphoto.PNG?alt=media&token=73338ff6-550f-4e63-bcd0-c9a220560cc6'
-  };
-
+    },
+    type = 'not-found'
 
 class App extends Component {
   render() {
@@ -68,6 +68,7 @@ class App extends Component {
           parentCollection={parentCollection}
           logoText={logoText}
           personalImage={personalImage}
+          type={type}
         />
       </AppLayout>
     );

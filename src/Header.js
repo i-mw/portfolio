@@ -12,11 +12,13 @@ function Header(props) {
     primaryLang,
     parentCollection,
     logoText,
-    personalImage
+    personalImage,
+    type
   } = props;
   
   return (
-    <header className={''}>
+    /* type is equal to one of these: about, collection, doc, not-found */
+    <header className={type}>
       <div className="container">
         {parentCollection && <GoToParent parentCollection={parentCollection}/>}
         {logoText && <Logo logoText={logoText}/>}
@@ -29,6 +31,7 @@ function Header(props) {
 }
 
 Header.propTypes = {
+  type: propTypes.string.isRequired,
   headline: propTypes.string.isRequired,
   headlinePoints: propTypes.array,
   primaryLang: propTypes.string,
