@@ -3,13 +3,13 @@ import propTypes from 'prop-types';
 
 function LangIndicator(props) {
   return (
-    <div className={"lang-indicator " + props.primaryLanguage}
-      title={ props.primaryLanguage + " is the primary language in this project"}></div>
+    <div className={"lang-indicator " + props.primaryLang}
+      title={ props.primaryLang + " is the primary language in this project"}></div>
   );
 }
 
 LangIndicator.propTypes = {
-  primaryLanguage: propTypes.string.isRequired
+  primaryLang: propTypes.string.isRequired
 }
 
 export default LangIndicator;
