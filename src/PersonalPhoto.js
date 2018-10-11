@@ -3,8 +3,8 @@ import propTypes from 'prop-types';
 
 function PeronalPhoto(props) {
   return (
-    <div class="personal-photo wrap-out">
-      <div class="wrap-in">
+    <div className="personal-photo wrap-out">
+      <div className="wrap-in">
         <img src={props.image.url} alt={props.image.caption}/>
       </div>
     </div>
