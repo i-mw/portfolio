@@ -12,7 +12,7 @@ const
   "react"
 ],
   searchTerm = "data analysis",
-  changeSearchTerm = searchBox => {console.log(searchBox.value)};
+  changeSearchTerm = newValue => {console.log(newValue)};
 
 class App extends Component {
   render() {
@@ -22,7 +22,8 @@ class App extends Component {
           searchTerm={searchTerm} changeSearchTerm={changeSearchTerm}
         />
 
-        <SearchKeywords keywords={keywords} searchTerm={searchTerm}/>
+        <SearchKeywords keywords={keywords} searchTerm={searchTerm}
+          changeSearchTerm={changeSearchTerm}/>
       </AppLayout>
     );
   }

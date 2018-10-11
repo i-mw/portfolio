@@ -2,16 +2,22 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 function SearchInput(props) {
-  const {keywords, searchTerm} = props;
+  const {
+    keywords,
+    searchTerm,
+    changeSearchTerm
+  } = props;
 
   return (
     <ul className="search-keywords">
       { 
         keywords.map(keyword => (
           <li className="wrap-out" key={keyword}>
-            <p className={
-              keyword === searchTerm ? "wrap-in active-keyword" : "wrap-in"
-              } tabIndex="0">{keyword}</p>
+            <p tabIndex="0" className = {
+                keyword === searchTerm ? "wrap-in active-keyword" : "wrap-in"}
+                onClick={event => changeSearchTerm(keyword)}>
+            {keyword}
+            </p>
           </li>
         ))
       }
@@ -22,7 +28,7 @@ function SearchInput(props) {
 SearchInput.propTypes = {
   keywords: propTypes.array.isRequired,
   searchTerm: propTypes.string.isRequired,
-
+  changeSearchTerm: propTypes.func.isRequired
 }
 
 export default SearchInput;
