@@ -8,7 +8,9 @@ class App extends Component {
   render() {
     return (
       <AppLayout>
-        <SearchInput colType="projects" searchTerm="hello"/>
+        <SearchInput colType="projects" searchTerm="hello" changeSearchTerm={searchBox => {
+          console.log(searchBox.value)
+        }}/>
       </AppLayout>
     );
   }
