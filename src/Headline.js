@@ -1,14 +1,14 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-function Heading(props) {
+function Headline(props) {
   return (
     ''
   );
 }
 
-Heading.propTypes = {
-  
+Headline.propTypes = {
+
 }
 
-export default Heading;
+export default Headline;
