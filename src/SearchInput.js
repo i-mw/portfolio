@@ -8,11 +8,11 @@ function SearchInput(props) {
     <div className="search wrap-out">
       <div className="wrap-in">
         <input placeholder={"search my " + colType} type="text" name="search"
-          defaultValue={searchTerm} onChange={event => changeSearchTerm(event.target)}
-          onKeyDown={event => event.keyCode === 13 && (changeSearchTerm(event.target))} 
+          defaultValue={searchTerm} onChange={event => changeSearchTerm(event.target.value)}
+          onKeyDown={event => event.keyCode === 13 && (changeSearchTerm(event.target.value))} 
         />
         <button onClick={
-          event => changeSearchTerm(document.querySelector('.search input'))
+          event => changeSearchTerm(document.querySelector('.search input').value)
         }>Search</button>
       </div>
     </div>
