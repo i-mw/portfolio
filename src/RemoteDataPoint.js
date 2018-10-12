@@ -21,7 +21,16 @@ class RemoteDataPoint extends Component {
 
     return (
       <tr>
-        <td>{}:</td>
+        <td>{
+          parentCollection !== 'skills' ?
+            searchCollection
+            :
+            searchCollection === 'projects' ||
+            searchCollection === 'snippets' ?
+              'Applied on' + searchCollection
+              :
+              'Learnt from' + searchCollection
+        }:</td>
         <td><a></a></td>
       </tr>
     )
