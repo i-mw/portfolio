@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import LangIndicator from './LangIndicator'
+import Summary from './Summary'
 
 function Headline(props) {
   return (
@@ -12,9 +13,7 @@ function Headline(props) {
         }
         {
           props.headlinePoints && (
-              props.headlinePoints[0].content.map(
-                (point, index) => <p key={index}>{point.i}</p>
-              )
+            <Summary summaryContent={props.headlinePoints[0].content}/>
           )
         }
     </div>
