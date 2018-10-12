@@ -1,13 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-function DataRow(props) {
+function DataPoint(props) {
   return (
     ''
   );
 }
 
-DataRow.propTypes = {
+DataPoint.propTypes = {
 }
 
-export default DataRow;
+export default DataPoint;
