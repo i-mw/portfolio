@@ -801,7 +801,7 @@ main.doc section {
     background-size: cover;
 }
 
-.doc .summary {
+.jumbotron .summary {
     padding: 15px;
     text-align: justify;
 }
