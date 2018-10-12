@@ -1,13 +1,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import Summary from './Summary'
 
 function AboutSection(props) {
   return (
     <li className="details wrap-out">
       <div className="wrap-in thick-border">
-        {props.sectionContent.content.map((paragraph, index) => {
-          return <p key={index} dangerouslySetInnerHTML={{__html: paragraph.i}}></p>
-        })}
+        <Summary summaryContent={props.sectionContent.content}/>
       </div>
     </li>
   );
