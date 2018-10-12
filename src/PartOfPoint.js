@@ -9,7 +9,9 @@ function PartOfPoint(props) {
           <td>Part Of:</td>
           {
             partOf.map(program => (
-              <td key={program.id}><a href={'./' + program.type + 's/' + program.id}>{program.title}</a></td>
+              <td key={program.id}>
+                <a href={'./' + program.type + 's/' + program.id}>{program.title}</a>
+              </td>
             ))
           }
         </tr>
