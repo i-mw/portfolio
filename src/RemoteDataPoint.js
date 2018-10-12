@@ -4,7 +4,20 @@ import * as dbAPI from './dbAPI';
 
 class RemoteDataPoint extends Component {
   state = {
-    //set initial state
+    remoteCol: [
+      {
+        id: 'restaurant-reviews-app',
+        title: 'restaurant reviews app'
+      },
+      {
+      id: 'my-reads',
+      title: 'my reads'
+      },
+      {
+        id: 'cairo-metro-stations',
+        title: 'cairo metro stations'
+      }
+    ]
   }
 
   componentDidMount() {
@@ -20,19 +33,25 @@ class RemoteDataPoint extends Component {
     } = this.props;
 
     return (
-      <tr>
-        <td>{
-          parentCollection !== 'skills' ?
-            searchCollection
-            :
-            searchCollection === 'projects' ||
-            searchCollection === 'snippets' ?
-              'Applied on' + searchCollection
+      this.state.remoteCol.length > 0 && (
+        <tr>
+          <td>{
+            parentCollection !== 'skills' ?
+              searchCollection
               :
-              'Learnt from' + searchCollection
-        }:</td>
-        <td><a></a></td>
-      </tr>
+              searchCollection === 'projects' ||
+              searchCollection === 'snippets' ?
+                'Applied on' + searchCollection
+                :
+                'Learnt from' + searchCollection
+          }:</td>
+          {
+            this.state.remoteCol.map(doc => (
+              <td key={doc.id}><a href={'./' + searchCollection + '/' + doc.id}>{doc.title}</a></td>
+            ))
+          }
+        </tr>
+      )
     )
   }
 }
