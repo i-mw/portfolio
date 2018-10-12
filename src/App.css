@@ -799,8 +799,13 @@ main.doc section {
     display: block;
     border-bottom: 1px solid rgb(211, 210, 210);
     height: 250px;
-    background: url(images/pax.png) center center no-repeat;
+    text-indent: -9999px;
+    border: 1px solid #000;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
+    /* TODO: remove css backgroun images */
+    background-image: url(images/pax.png);
 }
 
 .jumbotron .summary {
