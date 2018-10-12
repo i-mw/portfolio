@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import AboutSection from './AboutSection.js'
 
-function AboutSections(props) {
+function AboutDetails(props) {
   return (
     <ul>
       {props.details.map((sectionContent, index) => {
@@ -12,8 +12,8 @@ function AboutSections(props) {
   );
 }
 
-AboutSections.propTypes = {
+AboutDetails.propTypes = {
   details: propTypes.array.isRequired
 }
 
-export default AboutSections;
+export default AboutDetails;
