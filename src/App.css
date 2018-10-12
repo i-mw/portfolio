@@ -520,6 +520,8 @@ main.collection ul.search-results li .image-container {
 }
 
 /* projects custom images */
+/* TODO: to be removed after insertion
+    into corresponding inline style element */
 main.collection ul.search-results li:nth-of-type(1) .image-container{
     background-image: url('images/pax.png');
 }
