@@ -9,8 +9,8 @@ class App extends Component {
     return (
       <AppLayout>
         <RemoteDataPoint
-          parentCollection={'certificates'} searchCollection={'projects'}
-          searchProperty={'partOf.udacity-fend.id'} searchValue={'udacity-fend'}/>
+          parentCollection={'skills'} searchCollection={'projects'}
+          searchProperty={'skills.html.id'} searchValue={'html'}/>
       </AppLayout>
     );
   }

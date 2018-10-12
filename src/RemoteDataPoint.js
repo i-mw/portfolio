@@ -4,32 +4,25 @@ import * as dbAPI from './dbAPI';
 
 class RemoteDataPoint extends Component {
   state = {
-    remoteCol: [
-      {
-        id: 'restaurant-reviews-app',
-        title: 'restaurant reviews app'
-      },
-      {
-      id: 'my-reads',
-      title: 'my reads'
-      },
-      {
-        id: 'cairo-metro-stations',
-        title: 'cairo metro stations'
-      }
-    ]
-  }
+    remoteCol: []
+}
 
   componentDidMount() {
-    //get Data from db
+    this.RetrieveCollection();
+  }
+
+  RetrieveCollection = _ => {
+    const {searchCollection, searchProperty, searchValue} = this.props;
+    dbAPI.getCustomCollection(searchCollection + '-heavy', searchProperty, searchValue)
+      .then(col => {
+        this.setState({remoteCol: col})
+      })
   }
 
   render() {
     const {
       parentCollection,
-      searchCollection,
-      searchProperty,
-      searchValue
+      searchCollection
     } = this.props;
 
     return (
@@ -41,9 +34,9 @@ class RemoteDataPoint extends Component {
               :
               searchCollection === 'projects' ||
               searchCollection === 'snippets' ?
-                'Applied on' + searchCollection
+                'Applied on ' + searchCollection
                 :
-                'Learnt from' + searchCollection
+                'Learnt from ' + searchCollection
           }:</td>
           {
             this.state.remoteCol.map(doc => (
