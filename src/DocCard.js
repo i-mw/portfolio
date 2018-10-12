@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import LangIndicator from './LangIndicator';
 import {Link} from 'react-router-dom'
 
-function Card(props) {
+function DocCard(props) {
   const {docData, parentCol} = props;
 
   return (
@@ -24,9 +24,9 @@ function Card(props) {
   );
 }
 
-Card.propTypes = {
+DocCard.propTypes = {
   docData: propTypes.object.isRequired,
   parentCol: propTypes.string.isRequired
 }
 
-export default Card;
+export default DocCard;
