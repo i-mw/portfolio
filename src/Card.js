@@ -7,7 +7,7 @@ function Card(props) {
   const {docData, parentCol} = props;
 
   return (
-    <li className="wrap-out current">
+    <li className={docData.dates.endedAt ? "wrap-out" : "wrap-out current"}>
       <Link to={'./' + parentCol + '/'+ docData.id} className="wrap-in">
         {
           docData.images && 
