@@ -34,7 +34,6 @@ function CertificateTechnicalTable(props) {
 }
 
 CertificateTechnicalTable.propTypes = {
-  skills: propTypes.object.isRequired,
   documentId: propTypes.string.isRequired
 }
 
