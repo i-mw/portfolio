@@ -3,6 +3,8 @@ import propTypes from 'prop-types';
 import RemoteDatPoint from './RemoteDataPoint'
 
 function SkillTechnicalTable(props) {
+  const {documentId} = props;
+
   return (
     <section className="wrap-out points">
       <div className="wrap-in">

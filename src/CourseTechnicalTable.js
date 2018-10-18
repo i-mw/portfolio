@@ -4,12 +4,14 @@ import SkillsPoint from './SkillsPoint'
 import RemoteDataPoint from './RemoteDataPoint'
 
 function CourseTechnicalTable(props) {
+  const {skills, documentId} = props;
+
   return (
     <section className="wrap-out points">
       <div className="wrap-in">
         <table>
           <tbody>
-            <SkillsPoint skills={props.skills}/>
+            <SkillsPoint skills={skills}/>
             <RemoteDataPoint
               parentCollection='courses'
               searchCollection='projects'
