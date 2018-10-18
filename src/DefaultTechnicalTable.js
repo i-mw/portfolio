@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import SkillsPoint from './SkillsPoint';
 
-function ProSnpTechnicalTable(props) {
+function DefaultTechnicalTable(props) {
   return (
     <section className="wrap-out points">
       <div className="wrap-in">
@@ -16,8 +16,8 @@ function ProSnpTechnicalTable(props) {
   )
 }
 
-ProSnpTechnicalTable.propTypes = {
+DefaultTechnicalTable.propTypes = {
   skills: propTypes.object.isRequired
 }
 
-export default ProSnpTechnicalTable;
+export default DefaultTechnicalTable;
