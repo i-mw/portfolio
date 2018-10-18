@@ -6,11 +6,11 @@ import SearchResults from './SearchResults'
 
 class Search extends Component {
   state = {
-    searchTerm: null,
+    searchTerm: '',
     filteredDocs: null
   }
   
-  changeSearchTerm(searchTerm) {
+  changeSearchTerm = searchTerm => {
     let filteredDocs = this.props.retrievedDocs.filter(doc => {
       return doc.keywords.find(keyword => {
         return keyword.indexOf(searchTerm) > -1
@@ -36,7 +36,7 @@ class Search extends Component {
           changeSearchTerm={this.changeSearchTerm}
         />
         <SearchResults
-          filteredDocs={filteredDocs}
+          filteredDocs={filteredDocs || this.props.retrievedDocs}
           colType={colType}
         />
       </div>
