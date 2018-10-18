@@ -5,7 +5,15 @@ class About extends Component {
   state = {
     // proposed data structure
     // data: { main: {}}
-    data: null
+    data: {
+      main: null
+    }
+  }
+
+  retrieveData = _ => {
+    dbAPI.getDoc('about', 'main').then(data => {
+      this.setState({data: {main: data}});
+    })
   }
 
   /**
@@ -16,10 +24,13 @@ class About extends Component {
    */
   componentWillMount() {
     //TODO: get data from database
+    this.retrieveData()
   }
 
   render() {
-    return('hello')
+    return(
+      ''
+    )
   }
 }
 
