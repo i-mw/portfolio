@@ -8,7 +8,7 @@ function SearchResults(props) {
   return (
     <ul className="search-results">
     {
-      filteredDocs.map(docData => (
+      filteredDocs && filteredDocs.map(docData => (
         <DocCard docData={docData} colType={colType} key={docData.id}/>
       ))
     }
