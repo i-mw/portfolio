@@ -1,5 +1,7 @@
-import {React, Component} from 'react';
+import React, {Component} from 'react';
 import * as dbAPI from './dbAPI.js';
+import Header from './Header';
+import AboutDetails from './AboutDetails';
 
 class About extends Component {
   state = {
@@ -28,9 +30,19 @@ class About extends Component {
   }
 
   render() {
+    const {data} = this.state;
+    const personalImageId = 'personalic';
+
     return(
-      ''
-    )
+      this.state.data.main && (
+        <section>
+          <Header type='about' headline={data.main.headline}
+            logoText={data.main.textLogo}
+            personalImage={data.main.images.find(image => image.id === personalImageId)}/>
+          {/* <AboutDetails/> */}
+        </section>
+      )
+    );
   }
 }
 
