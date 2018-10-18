@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import RemoteDatPoint from './RemoteDataPoint'
+import RemoteDataPoint from './RemoteDataPoint'
 
 function SkillTechnicalTable(props) {
   const {documentId} = props;

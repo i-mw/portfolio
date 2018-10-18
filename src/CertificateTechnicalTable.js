@@ -1,10 +1,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import RemoteDatPoint from './RemoteDataPoint'
+import RemoteDataPoint from './RemoteDataPoint'
 
 function CertificateTechnicalTable(props) {
   const {documentId} = props;
-  
+
   return (
     <section className="wrap-out points">
       <div className="wrap-in">
