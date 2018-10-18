@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import PrimaryLanguagePoint from './PrimaryLanguagePoint'
 import CategoriesPoint from './CategoriesPoint'
 import DatesPoint from './DatesPoint'
 import DurationPoint from './DurationPoint'
@@ -10,6 +11,7 @@ import PartOfPoint from './PartOfPoint'
 
 function RoutineTable(props) {
   const {
+    primaryLanguage,
     categories,
     dates,
     duration,
@@ -24,6 +26,8 @@ function RoutineTable(props) {
       <div className="wrap-in">
         <table>
           <tbody>
+            {primaryLanguage && 
+              <PrimaryLanguagePoint primaryLanguage={primaryLanguage}/>}
             {categories && <CategoriesPoint categories={categories}/>}
             {dates && <DatesPoint dates={dates}/>}
             {duration && <DurationPoint duration={duration}/>}
@@ -39,6 +43,7 @@ function RoutineTable(props) {
 }
 
 RoutineTable.propTypes = {
+  primaryLanguage: propTypes.string,
   categories: propTypes.array,
   dates: propTypes.object,
   duration: propTypes.string,
