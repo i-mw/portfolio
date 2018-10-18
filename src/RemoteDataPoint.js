@@ -53,7 +53,7 @@ RemoteDataPoint.propTypes = {
   parentCollection: propTypes.string.isRequired,
   searchCollection: propTypes.string.isRequired,
   searchProperty: propTypes.string.isRequired,
-  searchValue: propTypes.string.isRequired,
+  searchValue: propTypes.string.isRequired
 }
 
 export default RemoteDataPoint;
