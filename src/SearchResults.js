@@ -3,13 +3,13 @@ import propTypes from 'prop-types';
 import DocCard from './DocCard'
 
 function SearchResults(props) {
-  const {filteredDocs, parentCol} = props;
+  const {filteredDocs, colType} = props;
 
   return (
     <ul className="search-results">
     {
       filteredDocs.map(docData => (
-        <DocCard docData={docData} parentCol={parentCol} key={docData.id}/>
+        <DocCard docData={docData} colType={colType} key={docData.id}/>
       ))
     }
     </ul>
@@ -18,7 +18,7 @@ function SearchResults(props) {
 
 SearchResults.propTypes = {
   filteredDocs: propTypes.array.isRequired,
-  parentCol: propTypes.string.isRequired
+  colType: propTypes.string.isRequired
 }
 
 export default SearchResults;
