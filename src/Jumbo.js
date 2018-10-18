@@ -4,15 +4,19 @@ import Summary from './Summary';
 
 function Jumbo(props) {
   const {jumboImage, summary} = props;
+  const defaultImage = 'https://firebasestorage.googleapis.com/v0/b/' + 
+    'portfolio-v2-9ca05.appspot.com/o/placeholder.png?' +
+    'alt=media&token=97415612-b965-4f82-b608-adf77e574707';
+
   return (
     <section className="wrap-out jumbotron">
       <div className="wrap-in">
         <div className="screenshot">
           <a tabIndex="-1" href={jumboImage.url}
-            style={{backgroundImage: "url(" + jumboImage.url + ")"}}
+            style={{backgroundImage: "url(" + jumboImage.url || defaultImage + ")"}}
             target="_blank" title="jumbo image">jumbo image</a>
         </div>
-        <Summary summaryContent={summary[0].content}/>
+        {summary[0].content && <Summary summaryContent={summary[0].content}/>}
       </div>
     </section>
   );
