@@ -7,7 +7,7 @@ function Headline(props) {
   return (
     <div className="wrap-out headline">
       <div className="wrap-in">
-        <h1>{props.headline}</h1>
+        <h1 dangerouslySetInnerHTML={{__html: props.headline}}></h1>
         {
           props.primaryLang && <LangIndicator primaryLang={props.primaryLang}/>
         }
