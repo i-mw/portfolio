@@ -4,11 +4,15 @@ import AboutSection from './AboutSection.js'
 
 function AboutDetails(props) {
   return (
-    <ul>
-      {props.details.map((sectionContent, index) => {
-        return <AboutSection key={index} sectionContent={sectionContent}/>
-      })}
-    </ul>
+    <main>
+      <div className="container" tabIndex="-1">
+        <ul>
+          {props.details.map((sectionContent, index) => {
+            return <AboutSection key={index} sectionContent={sectionContent}/>
+          })}
+        </ul>
+      </div>
+    </main>
   );
 }
 
