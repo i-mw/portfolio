@@ -17,7 +17,7 @@ function SearchResults(props) {
 }
 
 SearchResults.propTypes = {
-  filteredDocs: propTypes.array.isRequired,
+  filteredDocs: propTypes.array,
   colType: propTypes.string.isRequired
 }
 
