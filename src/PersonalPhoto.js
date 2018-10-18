@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-function PeronalPhoto(props) {
+function PersonalPhoto(props) {
   return (
     <div className="personal-photo wrap-out">
       <div className="wrap-in">
@@ -11,8 +11,8 @@ function PeronalPhoto(props) {
   );
 }
 
-PeronalPhoto.propTypes = { 
+PersonalPhoto.propTypes = { 
   image: propTypes.object.isRequired
 }
 
-export default PeronalPhoto;
+export default PersonalPhoto;
