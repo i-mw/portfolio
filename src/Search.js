@@ -5,20 +5,35 @@ import SearchKeywords from './SearchKeywords'
 import SearchResults from './SearchResults'
 
 class Search extends Component {
+  state = {
+    searchTerm: null,
+    filteredDocs: null
+  }
+  
+  changeSearchTerm(searchTerm) {
+    let filteredDocs = this.props.retrievedDocs.filter(doc => {
+      return doc.keywords.find(keyword => {
+        return keyword.indexOf(searchTerm) > -1
+      })
+    });
+    this.setState({searchTerm, filteredDocs});
+  }
+  
   render() {
     const {colType, keywords} = this.props;
+    const {searchTerm, filteredDocs} = this.state;
 
     return (
       <div className="container" tabIndex="-1">
         <SearchInput
           colType={colType}
           searchTerm={searchTerm}
-          changeSearchTerm={changeSearchTerm}
+          changeSearchTerm={this.changeSearchTerm}
         />
         <SearchKeywords
           keywords={keywords}
           searchTerm={searchTerm}
-          changeSearchTerm={changeSearchTerm}
+          changeSearchTerm={this.changeSearchTerm}
         />
         <SearchResults
           filteredDocs={filteredDocs}
@@ -31,7 +46,8 @@ class Search extends Component {
 
 Search.propTypes = {
   colType: propTypes.string.isRequired,
-  keywords: propTypes.array.isRequired
+  keywords: propTypes.array.isRequired,
+  retrievedDocs: propTypes.array.isRequired
 }
 
 export default Search;
