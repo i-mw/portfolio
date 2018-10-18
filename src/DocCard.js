@@ -20,7 +20,7 @@ function DocCard(props) {
         }
         <div className="text">
             <p>{docData.title}</p>
-            {primaryLang && <LangIndicator primaryLang={docData.primaryLanguage}/>}
+            {docData.primaryLang && <LangIndicator primaryLang={docData.primaryLanguage}/>}
         </div>
       </Link>
     </li> 
