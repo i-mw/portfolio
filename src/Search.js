@@ -24,22 +24,24 @@ class Search extends Component {
     const {searchTerm, filteredDocs} = this.state;
 
     return (
-      <div className="container" tabIndex="-1">
-        <SearchInput
-          colType={colType}
-          searchTerm={searchTerm}
-          changeSearchTerm={this.changeSearchTerm}
-        />
-        <SearchKeywords
-          keywords={keywords}
-          searchTerm={searchTerm}
-          changeSearchTerm={this.changeSearchTerm}
-        />
-        <SearchResults
-          filteredDocs={filteredDocs || this.props.retrievedDocs}
-          colType={colType}
-        />
-      </div>
+      <main className={colType === 'skills' ? 'collection skills' : 'collection'}>
+        <div className="container" tabIndex="-1">
+          <SearchInput
+            colType={colType}
+            searchTerm={searchTerm}
+            changeSearchTerm={this.changeSearchTerm}
+          />
+          <SearchKeywords
+            keywords={keywords}
+            searchTerm={searchTerm}
+            changeSearchTerm={this.changeSearchTerm}
+          />
+          <SearchResults
+            filteredDocs={filteredDocs || this.props.retrievedDocs}
+            colType={colType}
+          />
+        </div>
+      </main>
     );  
   }
 }
