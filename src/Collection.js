@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import propTypes from 'prop-types';
 import * as dbAPI from './dbAPI.js';
 import Header from './Header';
+import Search from './Search'
 
 class Collection extends Component {
   state = {
@@ -39,6 +40,8 @@ class Collection extends Component {
         <section>
           <Header type='collection' headline={main.headline}
             headlinePoints={main.headlinePoints}/>
+          <Search colType={this.props.colType} keywords={main.keywords}
+            retrievedDocs={list}/>
         </section>
       )
     );
