@@ -6,6 +6,7 @@ import Jumbo from './Jumbo';
 import RoutineTable from './RoutineTable';
 import LinksTable from './LinksTable';
 import TechnicalTable from './TechnicalTable'
+import Post from './Post'
 
 class Document extends Component {
   state = {
@@ -61,8 +62,8 @@ class Document extends Component {
               <TechnicalTable
                 parentCollection={this.props.parentCollection}
                 documentId={this.props.documentId}
-                skills={doc.skills}
-                />
+                skills={doc.skills}/>
+              {doc.details && <Post postContent={doc.details}/>}
             </div>
           </main>
         </section>
