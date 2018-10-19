@@ -27,7 +27,7 @@ function Jumbo(props) {
 
 Jumbo.propTypes = {
   jumboImage: propTypes.object.isRequired,
-  summary: propTypes.array.isRequired
+  summary: propTypes.array
 }
 
 export default Jumbo;
