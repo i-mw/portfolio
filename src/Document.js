@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import propTypes from 'prop-types';
 import * as dbAPI from './dbAPI.js';
 import Header from './Header';
+import Jumbo from './Jumbo';
 
 class Document extends Component {
   state = {
@@ -36,6 +37,12 @@ class Document extends Component {
           <Header type="doc" headline={doc.title}
             primaryLang={doc.primaryLanguage}
             parentCollection={this.props.parentCollection}/>
+          <main className="doc">
+            <div className="container" tabIndex="-1">
+              <Jumbo summary={doc.summary}
+                jumboImage={doc.images.find(image => image.placing === 'jumbo')}/>
+            </div>
+          </main>
         </section>
       )
     );
