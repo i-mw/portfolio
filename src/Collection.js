@@ -1,18 +1,24 @@
 import React, {Component} from 'react';
+import propTypes from 'prop-types';
 import * as dbAPI from './dbAPI.js';
 import Header from './Header';
-import Search from './Search';
 
 class Collection extends Component {
   state = {
-    data: {
-      main: null,
-      list: null
-    }
+    main: null,
+    list: null
   }
 
   retrieveData = _ => {
     /* TODO: retrieve data here */
+    dbAPI.getDoc(this.props.colType + '-light', 'main')
+      .then(data => {
+        this.setState({main: data});
+      })
+      .then(_ => dbAPI.getCollection(this.props.colType + '-light'))
+      .then(data => {
+        this.setState({list: data});
+      })
   }
 
   /**
@@ -26,15 +32,20 @@ class Collection extends Component {
   }
 
   render() {
-    const {data} = this.state;
-
+    const {main, list} = this.state;
+    
     return(
-      this.state.data.main && (
-        <section>
-        </section>
-      )
+''      
+      // this.state.main && (
+      //   <section>
+      //   </section>
+      // )
     );
   }
+}
+
+Collection.propTypes = {
+  colType: propTypes.string.isRequired
 }
 
 export default Collection;
