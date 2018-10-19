@@ -11,6 +11,10 @@ function DocCard(props) {
     'alt=media&token=97415612-b965-4f82-b608-adf77e574707';
 
   const image = retrievedImage || defaultImage;
+  if (docData.id === 'main') {
+    return ''
+  }
+  
   return (
     <li className={colType === 'skills' ? 'wrap-out' : docData.dates.endedAt ? "wrap-out" : "wrap-out current"}>
       <Link to={'./' + colType + '/'+ docData.id} className="wrap-in">
