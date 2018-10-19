@@ -5,8 +5,6 @@ import AboutDetails from './AboutDetails';
 
 class About extends Component {
   state = {
-    // proposed data structure
-    // data: { main: {}}
     data: {
       main: null
     }
@@ -25,7 +23,6 @@ class About extends Component {
    * screen before this component loads
    */
   componentWillMount() {
-    //TODO: get data from database
     this.retrieveData()
   }
 
@@ -39,7 +36,7 @@ class About extends Component {
           <Header type='about' headline={data.main.headline}
             logoText={data.main.textLogo}
             personalImage={data.main.images.find(image => image.id === personalImageId)}/>
-          {/* <AboutDetails/> */}
+          <AboutDetails details={data.main.details}/>
         </section>
       )
     );
