@@ -7,7 +7,7 @@ function DatesPoint(props) {
   return (
         <tr>
           <td>Year:</td>
-          <td>{dates.endedAt ? dates.endedAt.getFullYear() : 'working on'}</td>
+          <td>{dates.endedAt ? dates.endedAt.toDate().getFullYear() : 'working on'}</td>
         </tr>
   )
 }
