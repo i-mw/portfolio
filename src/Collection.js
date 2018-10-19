@@ -33,13 +33,14 @@ class Collection extends Component {
 
   render() {
     const {main, list} = this.state;
-    
+
     return(
-''      
-      // this.state.main && (
-      //   <section>
-      //   </section>
-      // )
+      this.state.main && (
+        <section>
+          <Header type='collection' headline={main.headline}
+            headlinePoints={main.headlinePoints}/>
+        </section>
+      )
     );
   }
 }
