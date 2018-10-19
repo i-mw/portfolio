@@ -5,18 +5,19 @@ import {Link} from 'react-router-dom'
 
 function DocCard(props) {
   const {docData, colType} = props;
+  const retrievedImage = docData.images && docData.images.find(image => image.placing === 'thumbnail').url;
   const defaultImage = 'https://firebasestorage.googleapis.com/v0/b/' + 
     'portfolio-v2-9ca05.appspot.com/o/placeholder.png?' +
     'alt=media&token=97415612-b965-4f82-b608-adf77e574707';
 
+  const image = retrievedImage || defaultImage;
   return (
     <li className={colType === 'skills' ? 'wrap-out' : docData.dates.endedAt ? "wrap-out" : "wrap-out current"}>
       <Link to={'./' + colType + '/'+ docData.id} className="wrap-in">
         {
           docData.images && 
           <div className="image-container"
-            style={{backgroundImage: "url('" + docData.images
-              .find(image => image.placing === 'thumbnail').url || defaultImage + "')"}}></div>
+            style={{backgroundImage: "url('" + image + "')"}}></div>
         }
         <div className="text">
             <p>{docData.title}</p>
