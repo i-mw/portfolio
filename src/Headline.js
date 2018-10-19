@@ -9,7 +9,8 @@ function Headline(props) {
       <div className="wrap-in">
         <h1 dangerouslySetInnerHTML={{__html: props.headline}}></h1>
         {
-          props.primaryLang && <LangIndicator primaryLang={props.primaryLang}/>
+          props.primaryLang && <LangIndicator primaryLang={props.primaryLang}
+            colType={props.colType}/>
         }
         {
           props.headlinePoints && (
@@ -24,7 +25,8 @@ function Headline(props) {
 Headline.propTypes = {
   headline: propTypes.string.isRequired,
   headlinePoints: propTypes.array,
-  primaryLang: propTypes.string
+  primaryLang: propTypes.string,
+  colType: propTypes.string.isRequired
 }
 
 export default Headline;

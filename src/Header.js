@@ -24,7 +24,7 @@ function Header(props) {
         {logoText && <Logo logoText={logoText}/>}
         {personalImage && <PersonalPhoto image={personalImage}/>}
         <Headline headline={headline} headlinePoints={headlinePoints}
-          primaryLang={primaryLang}/>
+          primaryLang={primaryLang} colType={parentCollection}/>
       </div>
     </header>
   );
