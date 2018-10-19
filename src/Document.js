@@ -33,6 +33,9 @@ class Document extends Component {
     return(
       doc && (
         <section>
+          <Header type="doc" headline={doc.title}
+            primaryLang={doc.primaryLanguage}
+            parentCollection={this.props.parentCollection}/>
         </section>
       )
     );
