@@ -5,14 +5,12 @@ import AboutDetails from './AboutDetails';
 
 class About extends Component {
   state = {
-    data: {
-      main: null
-    }
+    main: null
   }
 
   retrieveData = _ => {
     dbAPI.getDoc('about', 'main').then(data => {
-      this.setState({data: {main: data}});
+      this.setState({main: data});
     })
   }
 
@@ -27,16 +25,16 @@ class About extends Component {
   }
 
   render() {
-    const {data} = this.state;
+    const {main} = this.state;
     const personalImageId = 'personalic';
 
     return(
-      this.state.data.main && (
+      this.state.main && (
         <section>
-          <Header type='about' headline={data.main.headline}
-            logoText={data.main.textLogo}
-            personalImage={data.main.images.find(image => image.id === personalImageId)}/>
-          <AboutDetails details={data.main.details}/>
+          <Header type='about' headline={main.headline}
+            logoText={main.textLogo}
+            personalImage={main.images.find(image => image.id === personalImageId)}/>
+          <AboutDetails details={main.details}/>
         </section>
       )
     );
