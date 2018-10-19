@@ -14,7 +14,7 @@ function DocCard(props) {
   if (docData.id === 'main') {
     return ''
   }
-  
+
   return (
     <li className={colType === 'skills' ? 'wrap-out' : docData.dates.endedAt ? "wrap-out" : "wrap-out current"}>
       <Link to={'./' + colType + '/'+ docData.id} className="wrap-in">
@@ -25,7 +25,8 @@ function DocCard(props) {
         }
         <div className="text">
             <p>{docData.title}</p>
-            {docData.primaryLanguage && <LangIndicator primaryLang={docData.primaryLanguage}/>}
+            {docData.primaryLanguage && <LangIndicator
+              primaryLang={docData.primaryLanguage} colType={colType}/>}
         </div>
       </Link>
     </li> 
