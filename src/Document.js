@@ -45,7 +45,10 @@ class Document extends Component {
             <div className="container" tabIndex="-1">
               <Jumbo summary={doc.summary}
                 jumboImage={doc.images.find(image => image.placing === 'jumbo')}/>
-              <RoutineTable
+              {(doc.primaryLang || doc.categories || doc.dates ||
+                doc.duration || doc.provider || doc.author || doc.publisher ||
+                doc.partOf) && 
+                <RoutineTable
                 primaryLanguage={doc.primaryLanguage}
                 categories={doc.categories}
                 dates={doc.dates}
@@ -53,12 +56,16 @@ class Document extends Component {
                 provider={doc.provider}
                 author={doc.author}
                 publisher={doc.publisher}
-                partOf={doc.partOf}/>
-              <LinksTable
-                preview={doc.links.preview}
-                source={doc.links.source}
-                certificate={doc.links.certificate}
-                syllabus={doc.links.syllabus}/>
+                partOf={doc.partOf}/>}
+              {((doc.links && doc.links.preview) || 
+                (doc.links && doc.links.source) ||
+                (doc.links && doc.links.certificate) ||
+                (doc.links && doc.links.syllabus)) && 
+                <LinksTable
+                preview={doc.links && doc.links.preview}
+                source={doc.links && doc.links.source}
+                certificate={doc.links && doc.links.certificate}
+                syllabus={doc.links && doc.links.syllabus}/>}
               <TechnicalTable
                 parentCollection={this.props.parentCollection}
                 documentId={this.props.documentId}
