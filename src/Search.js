@@ -49,7 +49,7 @@ class Search extends Component {
 Search.propTypes = {
   colType: propTypes.string.isRequired,
   keywords: propTypes.array.isRequired,
-  retrievedDocs: propTypes.array.isRequired
+  retrievedDocs: propTypes.array
 }
 
 export default Search;
