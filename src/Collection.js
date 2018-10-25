@@ -11,7 +11,6 @@ class Collection extends Component {
   }
 
   retrieveData = _ => {
-    /* TODO: retrieve data here */
     dbAPI.getDoc(this.props.colType + '-light', 'main')
       .then(data => {
         this.setState({main: data});

@@ -14,7 +14,6 @@ class Document extends Component {
   }
 
   retrieveData = _ => {
-    /* TODO: retrieve data here */
     dbAPI.getDoc(this.props.parentCollection + '-heavy', this.props.documentId)
     .then(data => {
       this.setState({doc: data});
