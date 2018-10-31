@@ -19,12 +19,12 @@ class App extends Component {
           <Route exact path="/" component={About}/>
           {
             collections.map(col => (
-              <Route exact path={'/' + col} render={_=> <Collection colType={col} />}/>
+              <Route key={col} exact path={'/' + col} render={_=> <Collection colType={col} />}/>
             ))
           }
           {
             collections.map(col => (
-              <Route exact path={'/' + col + '/:doc'}
+              <Route key={col} exact path={'/' + col + '/:doc'}
                 render={props => <Document parentCollection={col} documentId={props.match.params.doc}/>}
               />
             ))
