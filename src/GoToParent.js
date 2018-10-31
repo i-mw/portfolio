@@ -6,7 +6,7 @@ import backArrow from './back-arrow.svg';
 function GoToParent(props) {
   return (
     <div className="go-to-parent">
-      <Link to={"./" + props.parentCollection}>
+      <Link to={"/" + props.parentCollection}>
         <img src={backArrow} alt="back arrow icon"/>
         <p>all {props.parentCollection}</p>
       </Link>
