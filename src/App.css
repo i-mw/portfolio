@@ -15,6 +15,10 @@
     color: #435472;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 ul {
     list-style-type: none;
 }
