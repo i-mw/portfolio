@@ -7,6 +7,7 @@ import RoutineTable from './RoutineTable';
 import LinksTable from './LinksTable';
 import TechnicalTable from './TechnicalTable'
 import Post from './Post'
+import NotFound from './NotFound';
 
 class Document extends Component {
   state = {
@@ -16,7 +17,7 @@ class Document extends Component {
   retrieveData = _ => {
     dbAPI.getDoc(this.props.parentCollection + '-heavy', this.props.documentId)
     .then(data => {
-      this.setState({doc: data});
+      this.setState({doc: data ? data : '404'})
     })
 
   }
@@ -35,6 +36,8 @@ class Document extends Component {
     const {doc} = this.state;
 
     return(
+      doc === '404' ? <NotFound />
+      :
       doc && (
         <section>
           <Header type="doc" headline={doc.title}
