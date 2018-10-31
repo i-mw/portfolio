@@ -26,7 +26,7 @@ Headline.propTypes = {
   headline: propTypes.string.isRequired,
   headlinePoints: propTypes.array,
   primaryLang: propTypes.string,
-  colType: propTypes.string.isRequired
+  colType: propTypes.string
 }
 
 export default Headline;
