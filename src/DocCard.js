@@ -17,7 +17,7 @@ function DocCard(props) {
 
   return (
     <li className={colType === 'skills' ? 'wrap-out' : docData.dates.endedAt ? "wrap-out" : "wrap-out current"}>
-      <Link to={'./' + colType + '/'+ docData.id} className="wrap-in">
+      <Link to={'/' + colType + '/'+ docData.id} className="wrap-in">
         {
           docData.images && 
           <div className="image-container"

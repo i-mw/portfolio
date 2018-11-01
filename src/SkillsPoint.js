@@ -9,7 +9,7 @@ function SkillsPoint(props) {
           <td>Skills:</td>
           {
             skills.map(skill => (
-              <td key={skill.id}><a href={'./skills/' + skill.id}>{skill.title}</a></td>
+              <td key={skill.id}><a href={'/skills/' + skill.id}>{skill.title}</a></td>
             ))
           }
         </tr>

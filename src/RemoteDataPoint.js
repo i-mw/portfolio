@@ -40,7 +40,7 @@ class RemoteDataPoint extends Component {
           }:</td>
           {
             this.state.remoteCol.map(doc => (
-              <td key={doc.id}><a href={'./' + searchCollection + '/' + doc.id}>{doc.title}</a></td>
+              <td key={doc.id}><a href={'/' + searchCollection + '/' + doc.id}>{doc.title}</a></td>
             ))
           }
         </tr>
