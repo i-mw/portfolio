@@ -40,7 +40,7 @@ class Collection extends Component {
           <Header type='collection' headline={main.headline}
             headlinePoints={main.headlinePoints}/>
           <Search colType={this.props.colType} keywords={main.keywords}
-            retrievedDocs={list}/>
+            retrievedDocs={list} location={this.props.location}/>
         </section>
       )
     );

@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/" component={About}/>
           {
             collections.map(col => (
-              <Route key={col} exact path={'/' + col} render={_=> <Collection colType={col} />}/>
+              <Route key={col} exact path={'/' + col} render={props => <Collection colType={col} {...props}/>}/>
             ))
           }
           {
