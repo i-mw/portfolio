@@ -75,11 +75,15 @@ nav .container, footer .container {
     outline: none;
   }
 
-footer.fixed-bottom {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
+/* fix footer to bottom */
+nav {
+    margin-bottom: calc(100vh - 158px);
+}
+
+#app-container > section {
+    border: 1px solid transparent;
+    min-height: calc(100vh - 158px);
+    margin-top: calc(158px - 100vh);
 }
 
 
@@ -978,6 +982,18 @@ header.not-found .headline {
     }   
 }
 
+@media screen and (min-width: 351px) {
+    /* fix footer to bottom */
+    nav {
+        margin-bottom: calc(100vh - 138px);
+    }
+
+    #app-container > section {
+        border: 1px solid transparent;
+        min-height: calc(100vh - 138px);
+        margin-top: calc(138px - 100vh);
+    }
+}
 
 @media screen and (min-width: 410px) {
     /* header */
@@ -1057,6 +1073,17 @@ header.not-found .headline {
 
 
 @media screen and (min-width: 700px){
+    /* fix footer to bottom */
+    nav {
+        margin-bottom: calc(100vh - 98px);
+    }
+
+    #app-container > section {
+        border: 1px solid transparent;
+        min-height: calc(100vh - 98px);
+        margin-top: calc(98px - 100vh);
+    }
+
     /* nav */
     nav .container, footer .container
     /* nav.doc .container, footer.doc .container */ {

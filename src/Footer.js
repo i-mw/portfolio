@@ -1,27 +1,6 @@
 import React, {Component} from 'react';
 
 class Footer extends Component {
-  componentDidMount() {
-    this.fixFooterToBottom()
-  }
-
-  fixFooterToBottom() {
-    let footer = document.querySelector('footer');
-    function checkHeights() {
-        let bodyHeight = Number(window.getComputedStyle(document.body)
-            .height.replace('px', ''));
-        let viewportHeight = window.innerHeight;
-
-        if (bodyHeight < viewportHeight) {
-            footer.classList.add('fixed-bottom')
-        } else {
-            footer.classList.remove('fixed-bottom')
-        }
-    }
-    checkHeights();
-    window.addEventListener('resize', checkHeights);
-  }
-
   render() {
     return (
       <footer className="wrap-out">
