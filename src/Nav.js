@@ -5,7 +5,10 @@ import hamburger from './hamburger.svg'
 
 class Nav extends Component {
   componentDidMount() {
-    this.hideNavMenu();
+    //hide nav menu on escape click
+    document.addEventListener('keydown', event => {
+      event.keyCode === 27 && (this.hideNavMenu())
+    })
   }
 
   toggleNavMenu() {
@@ -15,9 +18,7 @@ class Nav extends Component {
 
   hideNavMenu() {
     let navMenu = document.querySelector('nav ul');
-    document.addEventListener('keydown', event => {
-      event.keyCode === 27 && (navMenu.classList.add('hidden'))
-    })
+    navMenu.classList.add('hidden');
   }
 
   skipContent() {
@@ -34,19 +35,19 @@ class Nav extends Component {
                   Skip to main content</div>
             <div className="container">
               <div className="logo">
-                  <Link to="/"><img src={logo} alt="logo" onClick={this.toggleNavMenu}/></Link>
+                  <Link to="/"><img src={logo} alt="logo" onClick={this.hideNavMenu}/></Link>
               </div>
               <div className="hamburger" tabIndex="0" onClick={this.toggleNavMenu}
                   onKeyDown={event => event.keyCode === 13 && this.toggleNavMenu(event)}>
                 <img src={hamburger} alt="hamburger icon"/>
               </div>
               <ul className="hidden"><li>
-                <Link to='/projects' onClick={this.toggleNavMenu}>PROJECTS</Link></li><li>
-                <Link to="/snippets" onClick={this.toggleNavMenu}>SNIPPETS</Link></li><li>
-                <Link to="/skills" onClick={this.toggleNavMenu}>SKILLS</Link></li><li>
-                <Link to="/courses" onClick={this.toggleNavMenu}>COURSES</Link></li><li>
-                <Link to="/certificates" onClick={this.toggleNavMenu}>CERTIFICATES</Link></li><li>
-                <Link to="/readings" onClick={this.toggleNavMenu}>READINGS</Link></li>
+                <Link to='/projects' onClick={this.hideNavMenu}>PROJECTS</Link></li><li>
+                <Link to="/snippets" onClick={this.hideNavMenu}>SNIPPETS</Link></li><li>
+                <Link to="/skills" onClick={this.hideNavMenu}>SKILLS</Link></li><li>
+                <Link to="/courses" onClick={this.hideNavMenu}>COURSES</Link></li><li>
+                <Link to="/certificates" onClick={this.hideNavMenu}>CERTIFICATES</Link></li><li>
+                <Link to="/readings" onClick={this.hideNavMenu}>READINGS</Link></li>
               </ul>
             </div>
           </div>
