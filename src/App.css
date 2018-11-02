@@ -115,7 +115,11 @@ nav {
     text-align: center;
     color: white;
     background-color: #d45c51;
-  }
+}
+
+.no-match {
+    text-align: center;
+}
 
 
 /*

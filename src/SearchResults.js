@@ -6,13 +6,16 @@ function SearchResults(props) {
   const {filteredDocs, colType} = props;
 
   return (
-    <ul className="search-results">
-    {
-      filteredDocs && filteredDocs.map(docData => (
-        <DocCard docData={docData} colType={colType} key={docData.id}/>
-      ))
-    }
-    </ul>
+    filteredDocs && filteredDocs.length <= 0 ? 
+      <p className="no-match">No match!</p>
+    :
+      <ul className="search-results">
+      {
+        filteredDocs && filteredDocs.map(docData => (
+          <DocCard docData={docData} colType={colType} key={docData.id}/>
+        ))
+      }
+      </ul>
   );
 }
 
