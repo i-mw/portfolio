@@ -34,19 +34,19 @@ class Nav extends Component {
                   Skip to main content</div>
             <div className="container">
               <div className="logo">
-                  <Link to="/"><img src={logo} alt="logo"/></Link>
+                  <Link to="/"><img src={logo} alt="logo" onClick={this.toggleNavMenu}/></Link>
               </div>
               <div className="hamburger" tabIndex="0" onClick={this.toggleNavMenu}
                   onKeyDown={event => event.keyCode === 13 && this.toggleNavMenu(event)}>
                 <img src={hamburger} alt="hamburger icon"/>
               </div>
               <ul className="hidden"><li>
-                <Link to='/projects'>PROJECTS</Link></li><li>
-                <Link to="/snippets">SNIPPETS</Link></li><li>
-                <Link to="/skills">SKILLS</Link></li><li>
-                <Link to="/courses">COURSES</Link></li><li>
-                <Link to="/certificates">CERTIFICATES</Link></li><li>
-                <Link to="/readings">READINGS</Link></li>
+                <Link to='/projects' onClick={this.toggleNavMenu}>PROJECTS</Link></li><li>
+                <Link to="/snippets" onClick={this.toggleNavMenu}>SNIPPETS</Link></li><li>
+                <Link to="/skills" onClick={this.toggleNavMenu}>SKILLS</Link></li><li>
+                <Link to="/courses" onClick={this.toggleNavMenu}>COURSES</Link></li><li>
+                <Link to="/certificates" onClick={this.toggleNavMenu}>CERTIFICATES</Link></li><li>
+                <Link to="/readings" onClick={this.toggleNavMenu}>READINGS</Link></li>
               </ul>
             </div>
           </div>
