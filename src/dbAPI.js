@@ -25,9 +25,22 @@ export const getCollection = collection => {
 
 export const getCustomCollection = (collection, propertyName, propertyValue) => 
   db.collection(collection).where(propertyName, '==', propertyValue)
-  .orderBy('dates.endedAt', 'desc').get()
-  .then(querySnapshot => {
+  .get().then(querySnapshot => {
     let list = [];
     querySnapshot.forEach(doc => {list.push(doc.data())});
+    list.sort((a,b) => {
+      if (!a.dates.endedAt || b.dates.endedAt < a.dates.endedAt) {
+        return -1
+      }
+      else if (!b.dates.endedAt || b.dates.endedAt > a.dates.endedAt) {
+        return 1
+      }
+      else if (!a.dates.endedAt && !b.dates.endedAt) {
+        return b.dates.startedAt > a.dates.startedAt? 1 : -1;
+      }
+      else {
+        return b.dates.endedAt - a.dates.endedAt
+      }
+    });
     return list;
   });
