@@ -3,11 +3,11 @@
   "version": "2.0.0",
   "private": true,
   "dependencies": {
-    "firebase": "^5.5.0",
+    "firebase": "^5.11.1",
     "focus-visible": "^4.1.5",
-    "prop-types": "^15.6.2",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },
