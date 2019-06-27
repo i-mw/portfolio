@@ -1162,12 +1162,25 @@ header.not-found .headline {
     }
 
     .doc .jumbotron {
-        max-width:  350px;
+        /* max-width:  350px; */
+        /* float: right; */
+    }
+
+    .doc .routine,
+    .doc .links {
+        max-width:  48%;
+    }
+
+    .doc .routine {
+        float: left;
+    }
+
+    .doc .links {
         float: right;
     }
 
-    .doc .points {
-        max-width:  300px;
+    .doc .technical {
+        clear: both;
     }
 
     .doc .points .wrap-in {

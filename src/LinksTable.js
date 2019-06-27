@@ -14,7 +14,7 @@ function LinksTable(props) {
   } = props;
 
   return (
-    <section className="wrap-out points">
+    <section className="wrap-out points links">
       <div className="wrap-in">
         <table>
           <tbody>

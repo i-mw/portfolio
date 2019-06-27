@@ -7,7 +7,7 @@ function CourseTechnicalTable(props) {
   const {skills, documentId} = props;
 
   return (
-    <section className="wrap-out points">
+    <section className="wrap-out points technical">
       <div className="wrap-in">
         <table>
           <tbody>

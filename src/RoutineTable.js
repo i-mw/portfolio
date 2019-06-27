@@ -22,7 +22,7 @@ function RoutineTable(props) {
   } = props;
   
   return (
-    <section className="wrap-out points">
+    <section className="wrap-out points routine">
       <div className="wrap-in">
         <table>
           <tbody>
