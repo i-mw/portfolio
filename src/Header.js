@@ -12,6 +12,7 @@ function Header(props) {
     primaryLang,
     parentCollection,
     logoText,
+    logoImage,
     personalImage,
     type
   } = props;
@@ -21,7 +22,7 @@ function Header(props) {
     <header className={type}>
       <div className="container">
         {parentCollection && <GoToParent parentCollection={parentCollection}/>}
-        {logoText && <Logo logoText={logoText}/>}
+        {logoImage && <Logo image={logoImage} logoText={logoText}/>}
         {personalImage && <PersonalPhoto image={personalImage}/>}
         <Headline headline={headline} headlinePoints={headlinePoints}
           primaryLang={primaryLang} colType={parentCollection}/>

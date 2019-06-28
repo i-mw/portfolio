@@ -5,7 +5,8 @@ function Logo(props) {
   return (
     <div className="logo wrap-out">
       <div className="wrap-in">
-        <pre dangerouslySetInnerHTML={{__html: props.logoText}}></pre>
+        <img src={props.image.url} alt={props.image.caption}/>
+        {/* <pre dangerouslySetInnerHTML={{__html: props.logoText}}></pre> */}
       </div>
     </div>
   );

@@ -27,12 +27,14 @@ class About extends Component {
   render() {
     const {main} = this.state;
     const personalImageId = 'personalic';
+    const logoImageId = 'logoic';
 
     return(
       this.state.main && (
         <section>
           <Header type='about' headline={main.headline}
             logoText={main.textLogo}
+            logoImage={main.images.find(image => image.id === logoImageId)}
             personalImage={main.images.find(image => image.id === personalImageId)}/>
           <AboutDetails details={main.details}/>
         </section>

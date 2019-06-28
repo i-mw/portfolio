@@ -242,7 +242,7 @@ header .logo {
     margin-right: 0;
     width: 70px;
     height: 70px;
-    border-radius: 100%;
+    border-radius: 50%;
     display: inline-block;
     position: relative;
 }
@@ -255,10 +255,11 @@ header .logo .wrap-in {
     border-radius: 100%;
     width: 70px;
     height: 70px;
+    padding: 10px;
     border-width: 2px;
 }
 
-header .logo pre{
+/* header .logo pre{
     top: 8px;
     left: 5px;
     font-size: 1.8px;
@@ -266,7 +267,7 @@ header .logo pre{
     font-family: monospace;
     text-align: initial;
     font-weight: 1000;
-}
+} */
 
 /* personal photo */
 header .personal-photo {
@@ -289,7 +290,8 @@ header .personal-photo .wrap-in {
     border-width: 2px;
 }
 
-header .personal-photo img {
+header .personal-photo img,
+header .logo img {
     width: 100%;
     border-radius: 100%;
     position: relative;
@@ -968,11 +970,11 @@ header.not-found .headline {
         height: 120px;
     }
     
-    header .logo pre{
+    /* header .logo pre{
         top: 10px;
         left: 10px;
         font-size: 3px;
-    }
+    } */
     
     header .personal-photo {
         width: 120px;
@@ -1012,11 +1014,11 @@ header.not-found .headline {
         height: 160px;
     }
     
-    header .logo pre{
+    /* header .logo pre{
         top: 17px;
         left: 14.5px;
         font-size: 4px;
-    }
+    } */
     
     header .personal-photo {
         width: 160px;
