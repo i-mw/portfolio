@@ -13,6 +13,8 @@ class Collection extends Component {
   retrieveData = _ => {
     dbAPI.getDoc(this.props.colType + '-light', 'main')
       .then(data => {
+        // todo: complete loadgin icon here
+        this.props.setIsLoading(false);
         this.setState({main: data});
       })
       .then(_ => dbAPI.getCollection(this.props.colType + '-light'))
@@ -46,9 +48,10 @@ class Collection extends Component {
     );
   }
 }
-
+// todo: complete loading icon here
 Collection.propTypes = {
-  colType: propTypes.string.isRequired
+  colType: propTypes.string.isRequired,
+  setIsLoading: propTypes.func.isRequired
 }
 
 export default Collection;

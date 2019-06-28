@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import propTypes from 'prop-types';
 import * as dbAPI from './dbAPI.js';
 import Header from './Header';
 import AboutDetails from './AboutDetails';
@@ -10,6 +11,7 @@ class About extends Component {
 
   retrieveData = _ => {
     dbAPI.getDoc('about', 'main').then(data => {
+      this.props.setIsLoading(false);
       this.setState({main: data});
     })
   }
@@ -29,6 +31,7 @@ class About extends Component {
     const personalImageId = 'personalic';
     const logoImageId = 'logoic';
 
+    // todo: complete loading icon down
     return(
       this.state.main && (
         <section>
@@ -41,6 +44,10 @@ class About extends Component {
       )
     );
   }
+}
+
+About.prototypes = {
+  setIsLoading: propTypes.func.isRequired
 }
 
 export default About;
