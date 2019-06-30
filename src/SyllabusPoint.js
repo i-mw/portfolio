@@ -3,10 +3,7 @@ import propTypes from 'prop-types';
 
 function SyllabusPoint(props) {
   return (
-        <tr>
-          <td>Syllabus:</td>
-          <td><a href={props.syllabus}>link</a></td>
-        </tr>
+        <li className="wrap-out"><a className="wrap-in" href={props.syllabus}>Syllabus</a></li>
   )
 }
 

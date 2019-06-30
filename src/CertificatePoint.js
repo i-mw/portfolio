@@ -3,10 +3,7 @@ import propTypes from 'prop-types';
 
 function CertificatePoint(props) {
   return (
-        <tr>
-          <td>Certificate:</td>
-          <td><a href={props.certificate}>link</a></td>
-        </tr>
+        <li className="wrap-out"><a className="wrap-in" href={props.certificate}>Certificate</a></li>
   )
 }
 

@@ -876,6 +876,36 @@ main.doc section {
 }
 
 
+/* 
+ * Links Table
+*/
+
+.doc .links {
+    width: 100%;
+    margin-top: -15px;
+}
+
+.doc .links ul {
+}
+
+.doc .links ul li {
+    margin-bottom: 0;
+}
+
+.doc .links ul li a.wrap-in {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-width: 1px;
+}
+
+.doc .links ul li a.wrap-in:hover,
+.doc .links ul li a.wrap-in.focus-visible:focus {
+    background: whitesmoke;
+}
+
+
+
 /*
  * details section
 */
@@ -1007,6 +1037,36 @@ header.not-found .headline {
         min-height: calc(100vh - 138px);
         margin-top: calc(138px - 100vh);
     }
+
+    /* 
+     * Links Table
+    */
+
+    .doc .links {
+        display: table;
+        table-layout: fixed;
+    }
+
+    .doc .links ul {
+        display: table-row;
+    }
+
+    .doc .links ul li {
+        display: table-cell;
+        margin-bottom: 15px;
+    }
+
+    .doc .links ul li a.wrap-in {
+        display: block;
+        text-align: center;
+        padding: 7px;
+        border-width: 1px;
+    }
+
+    .doc .links ul li a.wrap-in:hover,
+    .doc .links ul li a.wrap-in.focus-visible:focus {
+        background: whitesmoke;
+    }    
 }
 
 @media screen and (min-width: 410px) {
@@ -1176,7 +1236,7 @@ header.not-found .headline {
         /* float: right; */
     }
 
-    .doc .routine,
+    /* .doc .routine,
     .doc .links {
         max-width:  48%;
     }
@@ -1195,7 +1255,7 @@ header.not-found .headline {
 
     .doc .points .wrap-in {
         padding: 10px 5px;
-    }
+    } */
 
     .doc .details .wrap-in {
         padding: 40px;

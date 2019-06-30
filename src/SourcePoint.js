@@ -3,10 +3,7 @@ import propTypes from 'prop-types';
 
 function SourcePoint(props) {
   return (
-        <tr>
-          <td>Source:</td>
-          <td><a href={props.source}>link</a></td>
-        </tr>
+        <li className="wrap-out"><a className="wrap-in" href={props.source}>Source</a></li>
   )
 }
 

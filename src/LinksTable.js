@@ -14,17 +14,13 @@ function LinksTable(props) {
   } = props;
 
   return (
-    <section className="wrap-out points links">
-      <div className="wrap-in">
-        <table>
-          <tbody>
+    <section className="links">
+        <ul>
             {preview && <PreviewPoint preview={preview}/>}
             {source && <SourcePoint source={source}/>}
             {certificate && <CertificatePoint certificate={certificate}/>}
             {syllabus && <SyllabusPoint syllabus={syllabus}/>}
-          </tbody>
-        </table>
-      </div>
+        </ul>
     </section>
   )
 }

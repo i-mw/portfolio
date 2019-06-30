@@ -4,7 +4,7 @@ import SkillsPoint from './SkillsPoint';
 
 function DefaultTechnicalTable(props) {
   return (
-    <section className="wrap-out points technical">
+    <section className="wrap-out technical">
       <div className="wrap-in">
         <table>
           <tbody>
