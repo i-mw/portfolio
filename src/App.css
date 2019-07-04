@@ -839,43 +839,6 @@ main.doc section {
 }
 
 
-/*
- * points section
-*/
-
-.doc .points .wrap-in {
-    padding: 15px;
-    border-color: rgb(211, 210, 210);
-}
-
-.doc .points td {
-    padding: 4px 7px;
-    margin-bottom: 15px;
-    vertical-align: top;
-}
-
-.doc .points td:not(:nth-child(1)) {
-    border: 1px solid rgb(211, 210, 210);
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.doc .points td:not(:nth-child(1)):hover,
-.doc .points td:not(:nth-child(1)) a.focus-visible:focus {
-    background: whitesmoke;
-}
-
-.doc .points a {
-    display: block;
-    margin: -4px -7px;
-    padding: 4px 7px;
-}
-
-.doc .points:nth-child(4) > .wrap-in {
-    min-height: 70px;
-}
-
-
 /* 
  * Links Table
 */
@@ -902,6 +865,70 @@ main.doc section {
 .doc .links ul li a.wrap-in:hover,
 .doc .links ul li a.wrap-in.focus-visible:focus {
     background: whitesmoke;
+}
+
+
+/*
+ * Routine table section
+*/
+
+.doc .points .wrap-in {
+    padding: 15px;
+    border-color: rgb(211, 210, 210);
+}
+
+.doc .points li{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(211, 210, 210);
+}
+
+.doc .points li:last-child {
+    border-width: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.doc .points li p {
+    padding: 4px 7px;
+    margin-bottom: 15px;
+    vertical-align: top;
+    /* width: 27%; */
+    /* border: 1px dashed red; */
+}
+
+.doc .points li>p {
+    /* min-width: 149px; */
+    display: block;
+    text-decoration: underline;
+    font-style: italic;
+    /* border: 1px dashed blue; */
+}
+
+.doc .points li .answer {
+    /* border: 1px solid #000; */
+    display: inline-block;
+    margin-left: 20px;
+    /* min-width: 88px; */
+}
+
+.doc .points li>.answer p {
+    border: 1px solid rgb(211, 210, 210);
+    display: inline-block;
+    /* border: 1px dashed red; */
+    margin-right: 15px;
+    /* width: auto; */
+}
+
+.doc .points p:not(:nth-child(1)):hover,
+.doc .points p:not(:nth-child(1)) a.focus-visible:focus {
+    background: whitesmoke;
+}
+
+.doc .points li a {
+    display: block;
+    margin: -4px -7px;
+    padding: 4px 7px;
 }
 
 
@@ -1143,6 +1170,89 @@ header.not-found .headline {
         height: initial;
         padding-bottom: calc(100% - 4px);
     }
+
+    /*
+     * Routine table section
+    */
+
+    .doc .points .wrap-in {
+        padding: 15px;
+        border-color: rgb(211, 210, 210);
+    }
+
+    .doc .points li {
+        /* margin-bottom: 0; */
+        /* border: 1px dashed red; */
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+        padding-bottom: 15px;
+        padding-top: 5px;
+        border-width: 0;
+        border-bottom: 2px solid rgb(211, 210, 210);
+        /* border: 1px dashed red; */
+    }
+
+    .doc .points li:nth-child(odd) {
+        padding-right: 5%; 
+        border-right: 2px solid rgb(211, 210, 210);
+    }
+
+    .doc .points li:nth-child(even) {
+        padding-left: 5%;
+    }
+
+    .doc .points li:nth-last-child(2) {
+        border-bottom-width: 0;
+    }
+
+    .doc .points li:nth-child(even) {
+        border-bottom: 2px solid rgb(211, 210, 210);
+    }
+
+    .doc .points li:last-child {
+        border-bottom-width: 0;
+    }
+
+    .doc .points li:only-child {
+        border-width: 0;
+    }
+
+    .doc .points li>p {
+        padding: 4px 7px;
+        margin-bottom: 15px;
+        vertical-align: top;
+        /* display: inline-block; */
+        /* min-width: 119px; */
+        /* margin-right: 30px; */
+        /* border-bottom: 1px dashed grey; */
+    }
+
+    .doc .points li .answer {
+        margin-left: 25px;
+        /* border: 1px dashed blue; */
+    }
+
+    .doc .points li .answer p {
+        border: 1px solid rgb(211, 210, 210);
+        /* display: inline-block; */
+        margin-right: 15px;
+        /* min-width: 90px; */
+        /* width: auto; */
+        /* border: 1px dashed blue; */
+    }
+
+    .doc .points p:not(:nth-child(1)):hover,
+    .doc .points p:not(:nth-child(1)) a.focus-visible:focus {
+        background: whitesmoke;
+    }
+
+    .doc .points li a {
+        display: block;
+        margin: -4px -7px;
+        padding: 4px 7px;
+    }
+        
 }
 
 
@@ -1236,6 +1346,20 @@ header.not-found .headline {
         /* float: right; */
     }
 
+    /*
+     * Routine table section
+    */
+
+    .doc .points li {
+        /* border: 1px dashed red; */
+    }
+
+    .doc .points li .answer {
+        margin-left: 35px;
+    }
+
+
+
     /* .doc .routine,
     .doc .links {
         max-width:  48%;
@@ -1259,6 +1383,6 @@ header.not-found .headline {
 
     .doc .details .wrap-in {
         padding: 40px;
-    }    
+    }
 }
 

@@ -5,10 +5,12 @@ function ProviderPoint(props) {
   const {provider} = props;
   
   return (
-    <tr>
-      <td>Provider:</td>
-      <td><a href={provider.link}>{provider.title}</a></td>
-    </tr>
+    <li>
+      <p>Provider:</p>
+      <div className="answer">
+        <p><a href={provider.link}>{provider.title}</a></p>
+      </div>
+    </li>
   )
 }
 

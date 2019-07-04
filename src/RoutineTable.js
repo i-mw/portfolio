@@ -24,19 +24,17 @@ function RoutineTable(props) {
   return (
     <section className="wrap-out points routine">
       <div className="wrap-in">
-        <table>
-          <tbody>
-            {primaryLanguage ? 
-              <PrimaryLanguagePoint primaryLanguage={primaryLanguage}/> : null}
-            {categories ? <CategoriesPoint categories={categories}/> : null}
-            {dates ? <DatesPoint dates={dates}/> : null}
-            {duration ? <DurationPoint duration={duration}/> : null}
-            {provider ? <ProviderPoint provider={provider}/> : null}
-            {author ? <AuthorPoint author={author}/> : null}
-            {publisher ? <PublisherPoint publisher={publisher}/> : null}
-            {partOf ? <PartOfPoint partOf={partOf}/> : null}
-          </tbody>
-        </table>
+        <ul>
+          {primaryLanguage ? 
+            <PrimaryLanguagePoint primaryLanguage={primaryLanguage}/> : null}
+          {dates ? <DatesPoint dates={dates}/> : null}
+          {duration ? <DurationPoint duration={duration}/> : null}
+          {provider ? <ProviderPoint provider={provider}/> : null}
+          {author ? <AuthorPoint author={author}/> : null}
+          {publisher ? <PublisherPoint publisher={publisher}/> : null}
+          {categories ? <CategoriesPoint categories={categories}/> : null}
+          {partOf ? <PartOfPoint partOf={partOf}/> : null}
+        </ul>
       </div>
     </section>
   )

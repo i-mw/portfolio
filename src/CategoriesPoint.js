@@ -3,12 +3,14 @@ import propTypes from 'prop-types';
 
 function CategoriesPoint(props) {
   return (
-        <tr>
-          <td>Category:</td>
-          {props.categories.map(category => (
-            <td key={category}>{category}</td>
-          ))}
-        </tr>
+        <li>
+          <p>Category:</p>
+          <div className="answer">
+            {props.categories.map(category => (
+              <p key={category}>{category}</p>
+            ))}
+          </div>
+        </li>
   )
 }
 

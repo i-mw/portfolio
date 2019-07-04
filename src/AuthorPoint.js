@@ -3,10 +3,12 @@ import propTypes from 'prop-types';
 
 function AuthorPoint(props) {
   return (
-        <tr>
-          <td>Author:</td>
-          <td>{props.author}</td>
-        </tr>
+        <li>
+          <p>Author:</p>
+          <div className="answer">
+            <p>{props.author}</p>
+          </div>
+        </li>
   )
 }
 

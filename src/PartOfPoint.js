@@ -5,16 +5,18 @@ function PartOfPoint(props) {
   let partOf = [];
   for (let program in props.partOf) partOf.push(props.partOf[program]);
   return (
-        <tr>
-          <td>Part Of:</td>
-          {
-            partOf.map(program => (
-              <td key={program.id}>
-                <a href={'/' + program.type + 's/' + program.id}>{program.title}</a>
-              </td>
-            ))
-          }
-        </tr>
+        <li>
+          <p>Part Of:</p>
+          <div className="answer">
+            {
+              partOf.map(program => (
+                <p key={program.id}>
+                  <a href={'/' + program.type + 's/' + program.id}>{program.title}</a>
+                </p>
+              ))
+            }
+          </div>
+        </li>
   )
 }
 

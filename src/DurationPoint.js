@@ -3,10 +3,12 @@ import propTypes from 'prop-types';
 
 function DurationPoint(props) {
   return (
-        <tr>
-          <td>Duration:</td>
-          <td>{props.duration}</td>
-        </tr>
+        <li>
+          <p>Duration:</p>
+          <div className="answer">
+            <p>{props.duration}</p>
+          </div>
+        </li>
   )
 }
 

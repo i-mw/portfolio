@@ -3,10 +3,12 @@ import propTypes from 'prop-types';
 
 function PublisherPoint(props) {
   return (
-        <tr>
-          <td>Publisher:</td>
-          <td>{props.publisher}</td>
-        </tr>
+        <li>
+          <p>Publisher:</p>
+          <div className="answer">
+            <p>{props.publisher}</p>
+          </div>
+        </li>
   )
 }
 
