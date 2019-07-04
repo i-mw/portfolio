@@ -845,7 +845,7 @@ main.doc section {
 
 .doc .links {
     width: 100%;
-    margin-top: -15px;
+    margin-top: -25px;
 }
 
 .doc .links ul {
@@ -859,7 +859,9 @@ main.doc section {
     display: block;
     text-align: center;
     padding: 10px;
-    border-width: 1px;
+    border-width: 2px;
+    border-top-width: 0;
+    /* border: 1px dashed red; */
 }
 
 .doc .links ul li a.wrap-in:hover,
@@ -1094,7 +1096,14 @@ header.not-found .headline {
         display: block;
         text-align: center;
         padding: 7px;
-        border-width: 1px;
+        /* border-width: 2px; */
+        /* border-right: 1px; */
+        border-left-width: 0;
+        border-top-width: 0;
+    }
+
+    .doc .links ul li:first-child a.wrap-in {
+        border-left-width: 2px;
     }
 
     .doc .links ul li a.wrap-in:hover,
