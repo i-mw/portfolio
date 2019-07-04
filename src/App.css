@@ -878,9 +878,16 @@ main.doc section {
 }
 
 .doc .points li{
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
     margin-bottom: 10px;
-    padding-bottom: 10px;
     border-bottom: 2px solid rgb(211, 210, 210);
+    text-align: center;
+
 }
 
 .doc .points li:last-child {
@@ -908,7 +915,7 @@ main.doc section {
 .doc .points li .answer {
     /* border: 1px solid #000; */
     display: inline-block;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     /* min-width: 88px; */
 }
 
@@ -916,7 +923,7 @@ main.doc section {
     border: 1px solid rgb(211, 210, 210);
     display: inline-block;
     /* border: 1px dashed red; */
-    margin-right: 15px;
+    /* margin-right: 15px; */
     /* width: auto; */
 }
 
@@ -1184,22 +1191,26 @@ header.not-found .headline {
         /* margin-bottom: 0; */
         /* border: 1px dashed red; */
         display: inline-block;
-        width: 50%;
+        width: 40%;
         vertical-align: top;
+        padding: 10px;
         padding-bottom: 15px;
-        padding-top: 5px;
+        padding-top: 10px;
         border-width: 0;
         border-bottom: 2px solid rgb(211, 210, 210);
         /* border: 1px dashed red; */
     }
 
     .doc .points li:nth-child(odd) {
-        padding-right: 5%; 
-        border-right: 2px solid rgb(211, 210, 210);
+
+        margin-right: 11%;
+        margin-left: 4.5%;
+        /* border-right: 2px solid rgb(211, 210, 210); */
     }
 
     .doc .points li:nth-child(even) {
-        padding-left: 5%;
+        margin-right: 4.5%;
+        /* padding-left: 5%; */
     }
 
     .doc .points li:nth-last-child(2) {
@@ -1229,14 +1240,14 @@ header.not-found .headline {
     }
 
     .doc .points li .answer {
-        margin-left: 25px;
+        /* margin-left: 25px; */
         /* border: 1px dashed blue; */
     }
 
     .doc .points li .answer p {
         border: 1px solid rgb(211, 210, 210);
         /* display: inline-block; */
-        margin-right: 15px;
+        /* margin-right: 15px; */
         /* min-width: 90px; */
         /* width: auto; */
         /* border: 1px dashed blue; */
@@ -1355,7 +1366,7 @@ header.not-found .headline {
     }
 
     .doc .points li .answer {
-        margin-left: 35px;
+        /* margin-left: 35px; */
     }
 
 
