@@ -875,7 +875,7 @@ main.doc section {
 */
 
 .doc .points .wrap-in {
-    padding: 15px;
+    padding: 7px;
     border-color: rgb(211, 210, 210);
 }
 
@@ -885,11 +885,10 @@ main.doc section {
     margin-left: auto;
     padding-right: 15px;
     padding-left: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 10px;
+    padding-bottom: 7px;
+    margin-bottom: 7px;
     border-bottom: 2px solid rgb(211, 210, 210);
     text-align: center;
-
 }
 
 .doc .points li:last-child {
@@ -1192,33 +1191,50 @@ header.not-found .headline {
     */
 
     .doc .points .wrap-in {
-        padding: 15px;
+        padding: 13px 0px;
         border-color: rgb(211, 210, 210);
+        /* border-width: 1px; */
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .doc .points .wrap-in ul {
+        /* border: 1px dashed red; */
+        display: table-row;
     }
 
     .doc .points li {
+        /* text-align: left; */
         /* margin-bottom: 0; */
         /* border: 1px dashed red; */
-        display: inline-block;
-        width: 40%;
-        vertical-align: top;
-        padding: 10px;
-        padding-bottom: 15px;
-        padding-top: 10px;
+        display: table-cell;
+        width: auto;
+        /* vertical-align: top; */
+        padding: 5px;
+        padding-bottom: 0;
+        padding-top: 0;
         border-width: 0;
-        border-bottom: 2px solid rgb(211, 210, 210);
+        border-right: 1px solid rgb(211, 210, 210);
+        /* vertical-align: middle; */
+
+        /* border-bottom: 2px solid rgb(211, 210, 210); */
         /* border: 1px dashed red; */
     }
 
+    .doc .points li:only-child {
+        text-align: center;
+    }    
+
     .doc .points li:nth-child(odd) {
 
-        margin-right: 11%;
-        margin-left: 4.5%;
+        /* margin-right: 11%; */
+        /* margin-left: 4.5%; */
         /* border-right: 2px solid rgb(211, 210, 210); */
     }
 
     .doc .points li:nth-child(even) {
-        margin-right: 4.5%;
+        /* margin-right: 4.5%; */
         /* padding-left: 5%; */
     }
 
@@ -1227,7 +1243,7 @@ header.not-found .headline {
     }
 
     .doc .points li:nth-child(even) {
-        border-bottom: 2px solid rgb(211, 210, 210);
+        /* border-bottom: 2px solid rgb(211, 210, 210); */
     }
 
     .doc .points li:last-child {
@@ -1255,6 +1271,9 @@ header.not-found .headline {
 
     .doc .points li .answer p {
         border: 1px solid rgb(211, 210, 210);
+        padding-right: 5px;
+        padding-left: 5px;
+        word-break: break-word;
         /* display: inline-block; */
         /* margin-right: 15px; */
         /* min-width: 90px; */
@@ -1336,6 +1355,26 @@ header.not-found .headline {
         border-bottom: 3px solid rgb(211, 210, 210);
     }
 
+    /*
+     * Routine table section
+    */
+
+    .doc .points .wrap-in {
+        padding: 13px;
+    }
+
+    .doc .points li {
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .doc .points li .answer>p {
+        padding-right: 7px;
+        padding-left: 7px;
+    }
+
+
     /* footer */
     footer p:first-of-type {
         text-align: left;
@@ -1374,8 +1413,9 @@ header.not-found .headline {
         /* border: 1px dashed red; */
     }
 
-    .doc .points li .answer {
+    .doc .points li .answer>p{
         /* margin-left: 35px; */
+        word-break: normal;
     }
 
 
