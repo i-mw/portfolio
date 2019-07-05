@@ -928,8 +928,8 @@ main.doc section {
     /* width: auto; */
 }
 
-.doc .points p:not(:nth-child(1)):hover,
-.doc .points p:not(:nth-child(1)) a.focus-visible:focus {
+.doc .points li>.answer p:hover,
+.doc .points li>.answer p a.focus-visible:focus {
     background: whitesmoke;
 }
 
@@ -1280,11 +1280,11 @@ header.not-found .headline {
         /* width: auto; */
         /* border: 1px dashed blue; */
     }
-
+/* 
     .doc .points p:not(:nth-child(1)):hover,
     .doc .points p:not(:nth-child(1)) a.focus-visible:focus {
         background: whitesmoke;
-    }
+    } */
 
     .doc .points li a {
         display: block;
