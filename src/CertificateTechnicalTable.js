@@ -6,30 +6,26 @@ function CertificateTechnicalTable(props) {
   const {documentId} = props;
 
   return (
-    <section className="wrap-out technical">
-      <div className="wrap-in">
-        <table>
-          <tbody>
-            <RemoteDataPoint
-              parentCollection='certificates'
-              searchCollection='projects'
-              searchProperty={'partOf.' + documentId + '.id'}
-              searchValue={documentId}
-            />
-            <RemoteDataPoint
-              parentCollection='certificates'
-              searchCollection='snippets'
-              searchProperty={'partOf.' + documentId + '.id'}
-              searchValue={documentId}
-            />
-            <RemoteDataPoint
-              parentCollection='certificates'
-              searchCollection='courses'
-              searchProperty={'partOf.' + documentId + '.id'}
-              searchValue={documentId}
-            />
-          </tbody>
-        </table>
+    <section className="technical">
+      <div className="">
+        <RemoteDataPoint
+          parentCollection='certificates'
+          searchCollection='projects'
+          searchProperty={'partOf.' + documentId + '.id'}
+          searchValue={documentId}
+        />
+        <RemoteDataPoint
+          parentCollection='certificates'
+          searchCollection='snippets'
+          searchProperty={'partOf.' + documentId + '.id'}
+          searchValue={documentId}
+        />
+        <RemoteDataPoint
+          parentCollection='certificates'
+          searchCollection='courses'
+          searchProperty={'partOf.' + documentId + '.id'}
+          searchValue={documentId}
+        />
       </div>
     </section>
   )

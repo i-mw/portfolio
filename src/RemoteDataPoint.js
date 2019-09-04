@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import propTypes from 'prop-types';
 import * as dbAPI from './dbAPI';
+import SearchResults from './SearchResults.js'
+import Search from './Search';
 
 class RemoteDataPoint extends Component {
   state = {
@@ -27,8 +29,8 @@ class RemoteDataPoint extends Component {
 
     return (
       this.state.remoteCol.length > 0 && (
-        <tr>
-          <td>{
+        <div className="pointSection">
+          <h2>{
             parentCollection !== 'skills' ?
               searchCollection
               :
@@ -37,13 +39,17 @@ class RemoteDataPoint extends Component {
                 'Applied on ' + searchCollection
                 :
                 'Learnt from ' + searchCollection
-          }:</td>
+          }</h2>
           {
-            this.state.remoteCol.map(doc => (
-              <td key={doc.id}><a href={'/' + searchCollection + '/' + doc.id}>{doc.title}</a></td>
-            ))
+            // <SearchResults
+            //   filteredDocs={this.state.remoteCol}
+            //   colType={"certificate"}/>
+
+            // this.state.remoteCol.map(doc => (
+            //   <td key={doc.id}><a href={'/' + searchCollection + '/' + doc.id}>{doc.title}</a></td>
+            // ))
           }
-        </tr>
+        </div>
       )
     )
   }
