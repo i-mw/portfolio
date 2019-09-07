@@ -37,9 +37,9 @@ class RemoteDataPoint extends Component {
               :
               searchCollection === 'projects' ||
               searchCollection === 'snippets' ?
-                'Applied on ' + searchCollection
+                'Applied on these ' + searchCollection
                 :
-                'Learnt from ' + searchCollection
+                'Learnt from these ' + searchCollection
           }</h2>
           <ul>
             {

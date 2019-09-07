@@ -6,37 +6,31 @@ function SkillTechnicalTable(props) {
   const {documentId} = props;
 
   return (
-    <section className="wrap-out technical">
-      <div className="wrap-in">
-        <table>
-          <tbody>
-            <RemoteDataPoint
-              parentCollection='skills'
-              searchCollection='projects'
-              searchProperty={'skills.' + documentId + '.id'}
-              searchValue={documentId}
-            />
-            <RemoteDataPoint
-              parentCollection='skills'
-              searchCollection='snippets'
-              searchProperty={'skills.' + documentId + '.id'}
-              searchValue={documentId}
-            />
-            <RemoteDataPoint
-              parentCollection='skills'
-              searchCollection='courses'
-              searchProperty={'skills.' + documentId + '.id'}
-              searchValue={documentId}
-            />
-            <RemoteDataPoint
-              parentCollection='skills'
-              searchCollection='readings'
-              searchProperty={'skills.' + documentId + '.id'}
-              searchValue={documentId}
-            />
-          </tbody>
-        </table>
-      </div>
+    <section className="technical">
+      <RemoteDataPoint
+        parentCollection='skills'
+        searchCollection='projects'
+        searchProperty={'skills.' + documentId + '.id'}
+        searchValue={documentId}
+      />
+      <RemoteDataPoint
+        parentCollection='skills'
+        searchCollection='snippets'
+        searchProperty={'skills.' + documentId + '.id'}
+        searchValue={documentId}
+      />
+      <RemoteDataPoint
+        parentCollection='skills'
+        searchCollection='courses'
+        searchProperty={'skills.' + documentId + '.id'}
+        searchValue={documentId}
+      />
+      <RemoteDataPoint
+        parentCollection='skills'
+        searchCollection='readings'
+        searchProperty={'skills.' + documentId + '.id'}
+        searchValue={documentId}
+      />
     </section>
   )
 }
