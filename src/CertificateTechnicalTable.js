@@ -7,26 +7,24 @@ function CertificateTechnicalTable(props) {
 
   return (
     <section className="technical">
-      <div className="">
-        <RemoteDataPoint
-          parentCollection='certificates'
-          searchCollection='projects'
-          searchProperty={'partOf.' + documentId + '.id'}
-          searchValue={documentId}
-        />
-        <RemoteDataPoint
-          parentCollection='certificates'
-          searchCollection='snippets'
-          searchProperty={'partOf.' + documentId + '.id'}
-          searchValue={documentId}
-        />
-        <RemoteDataPoint
-          parentCollection='certificates'
-          searchCollection='courses'
-          searchProperty={'partOf.' + documentId + '.id'}
-          searchValue={documentId}
-        />
-      </div>
+      <RemoteDataPoint
+        parentCollection='certificates'
+        searchCollection='projects'
+        searchProperty={'partOf.' + documentId + '.id'}
+        searchValue={documentId}
+      />
+      <RemoteDataPoint
+        parentCollection='certificates'
+        searchCollection='snippets'
+        searchProperty={'partOf.' + documentId + '.id'}
+        searchValue={documentId}
+      />
+      <RemoteDataPoint
+        parentCollection='certificates'
+        searchCollection='courses'
+        searchProperty={'partOf.' + documentId + '.id'}
+        searchValue={documentId}
+      />
     </section>
   )
 }
