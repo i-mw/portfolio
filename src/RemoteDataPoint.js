@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import * as dbAPI from './dbAPI';
 import SearchResults from './SearchResults.js'
 import Search from './Search';
+import {Link} from 'react-router-dom'
 
 class RemoteDataPoint extends Component {
   state = {
@@ -40,15 +41,16 @@ class RemoteDataPoint extends Component {
                 :
                 'Learnt from ' + searchCollection
           }</h2>
-          {
-            // <SearchResults
-            //   filteredDocs={this.state.remoteCol}
-            //   colType={"certificate"}/>
-
-            // this.state.remoteCol.map(doc => (
-            //   <td key={doc.id}><a href={'/' + searchCollection + '/' + doc.id}>{doc.title}</a></td>
-            // ))
-          }
+          <ul>
+            {
+            this.state.remoteCol.map(doc => (
+              <li key={doc.id} className="wrap-out">
+                <Link to={'/' + searchCollection + '/' + doc.id}
+                className="wrap-in">{doc.title}</Link>
+              </li>
+            ))
+            }
+          </ul>
         </div>
       )
     )
