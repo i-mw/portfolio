@@ -940,6 +940,49 @@ main.doc section {
 }
 
 
+/*
+ * Technical table section
+*/
+
+/* Single remote point (projects, snippets ...etc) */
+
+.pointSection {
+    margin-top: 35px;
+}
+
+.pointSection:first-child {
+    margin-top: 53px;
+}
+
+.pointSection > h2 {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px dashed rgb(211, 210, 210);
+}
+
+.pointSection > ul {
+    margin-left: 20px;
+}
+
+.pointSection li.wrap-out {
+    display: inline-block;
+    margin-right: 18px;
+    margin-bottom: 18px;
+}
+
+.pointSection li a.wrap-in {
+    border-width: 1px;
+    padding: 8px;
+    display: block;
+}
+
+.pointSection li a.wrap-in:hover,
+.pointSection li a.wrap-in:focus {
+    background: whitesmoke;
+}
+
+
+
 
 /*
  * details section
