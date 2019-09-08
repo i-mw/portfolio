@@ -5,10 +5,12 @@ function DatesPoint(props) {
   const {dates} = props;
 
   return (
-        <li>
-          <p>Year:</p>
-          <div className="answer">
-            <p>{dates.endedAt ? dates.endedAt.toDate().getFullYear() : 'working on'}</p>
+        <li className="wrap-out">
+          <div className="wrap-in">
+            <p>Year:</p>
+            <div className="answer">
+              <p>{dates.endedAt ? dates.endedAt.toDate().getFullYear() : 'working on'}</p>
+            </div>
           </div>
         </li>
   )

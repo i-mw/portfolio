@@ -3,10 +3,12 @@ import propTypes from 'prop-types';
 
 function PrimaryLanguagePoint(props) {
   return (
-        <li>
-          <p>Primary Language:</p>
-          <div className="answer">
-            <p>{props.primaryLanguage}</p>
+        <li className="wrap-out">
+          <div className="wrap-in">
+            <p>Primary Language:</p>
+            <div className="answer">
+              <p>{props.primaryLanguage}</p>
+            </div>
           </div>
         </li>
   )

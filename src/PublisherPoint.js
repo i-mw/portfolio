@@ -3,10 +3,12 @@ import propTypes from 'prop-types';
 
 function PublisherPoint(props) {
   return (
-        <li>
-          <p>Publisher:</p>
-          <div className="answer">
-            <p>{props.publisher}</p>
+        <li className="wrap-out">
+          <div className="wrap-in">
+            <p>Publisher:</p>
+            <div className="answer">
+              <p>{props.publisher}</p>
+            </div>
           </div>
         </li>
   )
