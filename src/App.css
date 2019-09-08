@@ -957,7 +957,7 @@ main.doc section {
 .pointSection > h2 {
     margin-bottom: 20px;
     padding-bottom: 5px;
-    border-bottom: 2px dashed rgb(211, 210, 210);
+    border-bottom: 2px solid rgb(211, 210, 210);
 }
 
 .pointSection > ul {
