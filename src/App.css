@@ -901,31 +901,21 @@ main.doc section {
     padding: 4px 7px;
     margin-bottom: 15px;
     vertical-align: top;
-    /* width: 27%; */
-    /* border: 1px dashed red; */
 }
 
 .doc .points li>p {
-    /* min-width: 149px; */
     display: block;
     text-decoration: underline;
     font-style: italic;
-    /* border: 1px dashed blue; */
 }
 
 .doc .points li .answer {
-    /* border: 1px solid #000; */
     display: inline-block;
-    /* margin-left: 20px; */
-    /* min-width: 88px; */
 }
 
 .doc .points li>.answer p {
     border: 1px solid rgb(211, 210, 210);
     display: inline-block;
-    /* border: 1px dashed red; */
-    /* margin-right: 15px; */
-    /* width: auto; */
 }
 
 .doc .points li>.answer p:hover,
@@ -1233,60 +1223,34 @@ header.not-found .headline {
      * Routine table section
     */
 
-    .doc .points .wrap-in {
+    /* .doc .points .wrap-in {
         padding: 13px 0px;
         border-color: rgb(211, 210, 210);
-        /* border-width: 1px; */
         display: table;
         table-layout: fixed;
         width: 100%;
     }
 
     .doc .points .wrap-in ul {
-        /* border: 1px dashed red; */
         display: table-row;
     }
 
     .doc .points li {
-        /* text-align: left; */
-        /* margin-bottom: 0; */
-        /* border: 1px dashed red; */
         display: table-cell;
         width: auto;
-        /* vertical-align: top; */
         padding: 5px;
         padding-bottom: 0;
         padding-top: 0;
         border-width: 0;
         border-right: 1px solid rgb(211, 210, 210);
-        /* vertical-align: middle; */
-
-        /* border-bottom: 2px solid rgb(211, 210, 210); */
-        /* border: 1px dashed red; */
     }
 
     .doc .points li:only-child {
         text-align: center;
     }    
 
-    .doc .points li:nth-child(odd) {
-
-        /* margin-right: 11%; */
-        /* margin-left: 4.5%; */
-        /* border-right: 2px solid rgb(211, 210, 210); */
-    }
-
-    .doc .points li:nth-child(even) {
-        /* margin-right: 4.5%; */
-        /* padding-left: 5%; */
-    }
-
     .doc .points li:nth-last-child(2) {
         border-bottom-width: 0;
-    }
-
-    .doc .points li:nth-child(even) {
-        /* border-bottom: 2px solid rgb(211, 210, 210); */
     }
 
     .doc .points li:last-child {
@@ -1301,15 +1265,6 @@ header.not-found .headline {
         padding: 4px 7px;
         margin-bottom: 15px;
         vertical-align: top;
-        /* display: inline-block; */
-        /* min-width: 119px; */
-        /* margin-right: 30px; */
-        /* border-bottom: 1px dashed grey; */
-    }
-
-    .doc .points li .answer {
-        /* margin-left: 25px; */
-        /* border: 1px dashed blue; */
     }
 
     .doc .points li .answer p {
@@ -1317,23 +1272,13 @@ header.not-found .headline {
         padding-right: 5px;
         padding-left: 5px;
         word-break: break-word;
-        /* display: inline-block; */
-        /* margin-right: 15px; */
-        /* min-width: 90px; */
-        /* width: auto; */
-        /* border: 1px dashed blue; */
     }
-/* 
-    .doc .points p:not(:nth-child(1)):hover,
-    .doc .points p:not(:nth-child(1)) a.focus-visible:focus {
-        background: whitesmoke;
-    } */
 
     .doc .points li a {
         display: block;
         margin: -4px -7px;
         padding: 4px 7px;
-    }
+    } */
         
 }
 
@@ -1402,7 +1347,7 @@ header.not-found .headline {
      * Routine table section
     */
 
-    .doc .points .wrap-in {
+    /* .doc .points .wrap-in {
         padding: 13px;
     }
 
@@ -1415,7 +1360,7 @@ header.not-found .headline {
     .doc .points li .answer>p {
         padding-right: 7px;
         padding-left: 7px;
-    }
+    } */
 
 
     /* footer */
@@ -1452,40 +1397,12 @@ header.not-found .headline {
      * Routine table section
     */
 
-    .doc .points li {
-        /* border: 1px dashed red; */
-    }
-
-    .doc .points li .answer>p{
-        /* margin-left: 35px; */
+    /* .doc .points li .answer>p{
         word-break: normal;
     }
 
-
-
-    /* .doc .routine,
-    .doc .links {
-        max-width:  48%;
-    }
-
-    .doc .routine {
-        float: left;
-    }
-
-    .doc .links {
-        float: right;
-    }
-
-    .doc .technical {
-        clear: both;
-    }
-
-    .doc .points .wrap-in {
-        padding: 10px 5px;
-    } */
-
     .doc .details .wrap-in {
         padding: 40px;
-    }
+    } */
 }
 
