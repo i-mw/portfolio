@@ -24,15 +24,15 @@ function RoutineTable(props) {
   return (
     <section className="points routine">
       <ul>
+        {categories ? <CategoriesPoint categories={categories}/> : null}
+        {partOf ? <PartOfPoint partOf={partOf}/> : null}
+        {dates ? <DatesPoint dates={dates}/> : null}
         {primaryLanguage ? 
           <PrimaryLanguagePoint primaryLanguage={primaryLanguage}/> : null}
-        {dates ? <DatesPoint dates={dates}/> : null}
         {duration ? <DurationPoint duration={duration}/> : null}
         {provider ? <ProviderPoint provider={provider}/> : null}
         {author ? <AuthorPoint author={author}/> : null}
         {publisher ? <PublisherPoint publisher={publisher}/> : null}
-        {partOf ? <PartOfPoint partOf={partOf}/> : null}
-        {categories ? <CategoriesPoint categories={categories}/> : null}
       </ul>
     </section>
   )
