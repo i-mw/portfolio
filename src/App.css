@@ -1226,69 +1226,7 @@ header.not-found .headline {
     main.skills ul.search-results li .wrap-in {
         height: initial;
         padding-bottom: calc(100% - 4px);
-    }
-
-    /*
-     * Routine table section
-    */
-
-    /* .doc .points .wrap-in {
-        padding: 13px 0px;
-        border-color: rgb(211, 210, 210);
-        display: table;
-        table-layout: fixed;
-        width: 100%;
-    }
-
-    .doc .points .wrap-in ul {
-        display: table-row;
-    }
-
-    .doc .points li {
-        display: table-cell;
-        width: auto;
-        padding: 5px;
-        padding-bottom: 0;
-        padding-top: 0;
-        border-width: 0;
-        border-right: 1px solid rgb(211, 210, 210);
-    }
-
-    .doc .points li:only-child {
-        text-align: center;
-    }    
-
-    .doc .points li:nth-last-child(2) {
-        border-bottom-width: 0;
-    }
-
-    .doc .points li:last-child {
-        border-bottom-width: 0;
-    }
-
-    .doc .points li:only-child {
-        border-width: 0;
-    }
-
-    .doc .points li>p {
-        padding: 4px 7px;
-        margin-bottom: 15px;
-        vertical-align: top;
-    }
-
-    .doc .points li .answer p {
-        border: 1px solid rgb(211, 210, 210);
-        padding-right: 5px;
-        padding-left: 5px;
-        word-break: break-word;
-    }
-
-    .doc .points li a {
-        display: block;
-        margin: -4px -7px;
-        padding: 4px 7px;
-    } */
-        
+    }        
 }
 
 
@@ -1352,26 +1290,6 @@ header.not-found .headline {
         border-bottom: 3px solid rgb(211, 210, 210);
     }
 
-    /*
-     * Routine table section
-    */
-
-    /* .doc .points .wrap-in {
-        padding: 13px;
-    }
-
-    .doc .points li {
-        padding-right: 10px;
-        padding-left: 10px;
-        text-align: left;
-    }
-
-    .doc .points li .answer>p {
-        padding-right: 7px;
-        padding-left: 7px;
-    } */
-
-
     /* footer */
     footer p:first-of-type {
         text-align: left;
@@ -1401,17 +1319,5 @@ header.not-found .headline {
         /* max-width:  350px; */
         /* float: right; */
     }
-
-    /*
-     * Routine table section
-    */
-
-    /* .doc .points li .answer>p{
-        word-break: normal;
-    }
-
-    .doc .details .wrap-in {
-        padding: 40px;
-    } */
 }
 
