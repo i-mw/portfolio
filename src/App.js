@@ -16,8 +16,6 @@ class App extends Component {
     isInternalLoading: false
   }
 
-// todo: complete loading icon here and down 
-
   /* set external loading, loading a whole page */
   setIsExternalLoading = isExternalLoading => {
     this.setState({isExternalLoading})
@@ -30,13 +28,11 @@ class App extends Component {
 
   render() {
     const collections = ['projects', 'snippets', 'skills',
-      'courses', 'certificates', 'readings'];
-    
+      'courses', 'certificates', 'readings'];    
     const {isExternalLoading} = this.state;
-    // todo: complete loading icon here and down
-    console.log('rendering app ------')
-    console.log(isExternalLoading);
 
+    console.log('rendering app ------')
+    
     return (
       <section>
       {isExternalLoading && <ExternalLoading/>}

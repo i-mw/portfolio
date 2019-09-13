@@ -13,7 +13,6 @@ class Collection extends Component {
   retrieveData = _ => {
     dbAPI.getDoc(this.props.colType + '-light', 'main')
       .then(data => {
-        // todo: complete loading icon here
         this.props.setIsExternalLoading(false);
         this.setState({main: data});
         this.props.setIsInternalLoading(true);
@@ -52,7 +51,7 @@ class Collection extends Component {
     );
   }
 }
-// todo: complete loading icon here
+
 Collection.propTypes = {
   colType: propTypes.string.isRequired,
   setIsExternalLoading: propTypes.func.isRequired,

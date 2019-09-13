@@ -32,7 +32,6 @@ class About extends Component {
     const personalImageId = 'personalic';
     const logoImageId = 'logoic';
 
-    // todo: complete loading icon down
     return(
       this.state.main && (
         <section>
