@@ -9,7 +9,7 @@ import loadingIcon from './loading.svg'
 function InternalLoading(props) {
   return (
     <div className="wrap-out" style={{display: "inline-block", 
-                                      marginTop: "70px",
+                                      marginTop: "60px",
                                       marginBottom: "100px",
                                       left: "calc(50% - 35px)"}}>
       <div className="wrap-in" style={{border: 0, padding: 0}}>
