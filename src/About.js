@@ -46,7 +46,7 @@ class About extends Component {
   }
 }
 
-About.prototypes = {
+About.propTypes = {
   setIsExternalLoading: propTypes.func.isRequired
 }
 
