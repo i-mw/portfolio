@@ -13,11 +13,15 @@ import Document from './Document'
 class App extends Component {
   state = {
     isExternalLoading: true,
-    isInternalLoading: false
+    isInternalLoading: false,
+    isFirstLoad: true
   }
 
   /* set external loading, loading a whole page */
   setIsExternalLoading = isExternalLoading => {
+    if (!isExternalLoading) {
+      this.setIsFirstLoad(false)
+    }
     this.setState({isExternalLoading})
   }
 
@@ -26,17 +30,23 @@ class App extends Component {
     this.setState({isInternalLoading})
   }
 
+  /* determine if this is the website's first load */
+  setIsFirstLoad = isFirstLoad => {
+    this.setState({isFirstLoad})
+  }
+
   render() {
     const collections = ['projects', 'snippets', 'skills',
       'courses', 'certificates', 'readings'];    
-    const {isExternalLoading} = this.state;
+    const {isExternalLoading, isFirstLoad} = this.state;
 
     console.log('rendering app ------')
-    
+
     return (
       <section>
       {isExternalLoading && <ExternalLoading/>}
-      <AppLayout>
+      <AppLayout isExternalLoading={isExternalLoading}
+                 isFirstLoad={isFirstLoad}>
         <Switch>
           <Route exact path="/" render={_ => <About setIsExternalLoading={this.setIsExternalLoading}/>}/>
           {
