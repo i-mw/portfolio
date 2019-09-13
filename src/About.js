@@ -11,7 +11,7 @@ class About extends Component {
 
   retrieveData = _ => {
     dbAPI.getDoc('about', 'main').then(data => {
-      this.props.setIsLoading(false);
+      this.props.setIsExternalLoading(false);
       this.setState({main: data});
     })
   }
@@ -23,6 +23,7 @@ class About extends Component {
    * screen before this component loads
    */
   componentWillMount() {
+    this.props.setIsExternalLoading(true);
     this.retrieveData()
   }
 
@@ -47,7 +48,7 @@ class About extends Component {
 }
 
 About.prototypes = {
-  setIsLoading: propTypes.func.isRequired
+  setIsExternalLoading: propTypes.func.isRequired
 }
 
 export default About;

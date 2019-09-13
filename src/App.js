@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
+import ExternalLoading from './ExternalLoading';
+import isInternalLoading from './InternalLoading'
 import 'focus-visible';
 import './App.css';
 import AppLayout from './AppLayout.js';
@@ -7,37 +9,47 @@ import NotFound from './NotFound';
 import About from './About';
 import Collection from './Collection'
 import Document from './Document'
-import Loading from './Loading'
 
 class App extends Component {
   state = {
-    isLoading: true
+    isExternalLoading: true,
+    isInternalLoading: false
   }
 
 // todo: complete loading icon here and down 
-  setIsLoading = isLoading => {
-    this.setState({isLoading})
+
+  /* set external loading, loading a whole page */
+  setIsExternalLoading = isExternalLoading => {
+    this.setState({isExternalLoading})
+  }
+
+  /* set internal loading, loading a part or an element of a page */
+  setIsInternalLoading = isInternalLoading => {
+    this.setState({isInternalLoading})
   }
 
   render() {
     const collections = ['projects', 'snippets', 'skills',
       'courses', 'certificates', 'readings'];
     
-    const {isLoading} = this.state;
+    const {isExternalLoading} = this.state;
     // todo: complete loading icon here and down
     console.log('rendering app ------')
+    console.log(isExternalLoading);
 
     return (
       <section>
-      {isLoading && <Loading/>}
+      {isExternalLoading && <ExternalLoading/>}
       <AppLayout>
         <Switch>
-          <Route exact path="/" render={_ => <About setIsLoading={this.setIsLoading}/>}/>
+          <Route exact path="/" render={_ => <About setIsExternalLoading={this.setIsExternalLoading}/>}/>
           {
             collections.map(col => (
               <Route key={col} exact path={'/' + col}
                 render={props => <Collection
-                                    setIsLoading={this.setIsLoading}
+                                    setIsExternalLoading={this.setIsExternalLoading}
+                                    setIsInternalLoading={this.setIsInternalLoading}
+                                    isInternalLoading={this.state.isInternalLoading}
                                     colType={col}
                                     {...props}/>}/>
             ))
@@ -46,7 +58,9 @@ class App extends Component {
             collections.map(col => (
               <Route key={col} exact path={'/' + col + '/:doc'}
                 render={props => <Document
-                                    setIsLoading={this.setIsLoading}
+                                    setIsExternalLoading={this.setIsExternalLoading}
+                                    setIsInternalLoading={this.setIsInternalLoading}
+                                    isInternalLoading={this.state.isInternalLoading}
                                     parentCollection={col}
                                     documentId={props.match.params.doc}/>}
               />

@@ -11,6 +11,7 @@ class RemoteDataPoint extends Component {
 }
 
   componentDidMount() {
+    this.props.setIsInternalLoading(true);
     this.RetrieveCollection();
   }
 
@@ -18,6 +19,7 @@ class RemoteDataPoint extends Component {
     const {searchCollection, searchProperty, searchValue} = this.props;
     dbAPI.getCustomCollection(searchCollection + '-heavy', searchProperty, searchValue)
       .then(col => {
+        this.props.setIsInternalLoading(false);
         this.setState({remoteCol: col})
       })
   }
@@ -61,7 +63,8 @@ RemoteDataPoint.propTypes = {
   parentCollection: propTypes.string.isRequired,
   searchCollection: propTypes.string.isRequired,
   searchProperty: propTypes.string.isRequired,
-  searchValue: propTypes.string.isRequired
+  searchValue: propTypes.string.isRequired,
+  setIsInternalLoading: propTypes.func.isRequired
 }
 
 export default RemoteDataPoint;

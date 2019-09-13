@@ -2,7 +2,12 @@ import React from 'react';
 import propTypes from 'prop-types';
 import loadingIcon from './loading.svg'
 
-function Loading(props) {
+/* This component and icon is absolutely designed and aligned
+   And corresponds to loading a whole page, not an element in a page
+   - for an element in page check InternalLoading component
+*/
+
+function ExternalLoading(props) {
   return (
     <div className="wrap-out" style={{display: "inline-block", position: "absolute",
       zIndex: 1, top: "calc(50% - 35px)", left: "calc(50% - 35px)"}}>
@@ -13,8 +18,8 @@ function Loading(props) {
   )
 }
 
-Loading.propTypes = {
+ExternalLoading.propTypes = {
 
 }
 
-export default Loading;
+export default ExternalLoading;

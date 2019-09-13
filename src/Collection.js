@@ -13,12 +13,14 @@ class Collection extends Component {
   retrieveData = _ => {
     dbAPI.getDoc(this.props.colType + '-light', 'main')
       .then(data => {
-        // todo: complete loadgin icon here
-        this.props.setIsLoading(false);
+        // todo: complete loading icon here
+        this.props.setIsExternalLoading(false);
         this.setState({main: data});
+        this.props.setIsInternalLoading(true);
       })
       .then(_ => dbAPI.getCollection(this.props.colType + '-light'))
       .then(data => {
+        this.props.setIsInternalLoading(false);
         this.setState({list: data});
       })
   }
@@ -30,6 +32,7 @@ class Collection extends Component {
    * screen before this component loads
    */
   componentWillMount() {
+    this.props.setIsExternalLoading(true);
     this.retrieveData()
   }
 
@@ -42,7 +45,8 @@ class Collection extends Component {
           <Header type='collection' headline={main.headline}
             headlinePoints={main.headlinePoints}/>
           <Search colType={this.props.colType} keywords={main.keywords}
-            retrievedDocs={list} location={this.props.location}/>
+            retrievedDocs={list} location={this.props.location}
+            isInternalLoading={this.props.isInternalLoading}/>
         </section>
       )
     );
@@ -51,7 +55,9 @@ class Collection extends Component {
 // todo: complete loading icon here
 Collection.propTypes = {
   colType: propTypes.string.isRequired,
-  setIsLoading: propTypes.func.isRequired
+  setIsExternalLoading: propTypes.func.isRequired,
+  setIsInternalLoading: propTypes.func.isRequired,
+  isInternalLoading: propTypes.bool.isRequired
 }
 
 export default Collection;

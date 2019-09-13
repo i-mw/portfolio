@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import SearchInput from './SearchInput'
 import SearchKeywords from './SearchKeywords'
 import SearchResults from './SearchResults'
+import InternalLoading from './InternalLoading'
 
 class Search extends Component {
   state = {
@@ -27,7 +28,7 @@ class Search extends Component {
   }
   
   render() {
-    const {colType, keywords} = this.props;
+    const {colType, keywords, isInternalLoading} = this.props;
     const {searchTerm} = this.state;
 
     let filteredDocs = this.props.retrievedDocs ?
@@ -51,6 +52,7 @@ class Search extends Component {
             searchTerm={searchTerm}
             changeSearchTerm={this.changeSearchTerm}
           />
+          {isInternalLoading && <InternalLoading/>}
           <SearchResults
             filteredDocs={filteredDocs || this.props.retrievedDocs}
             colType={colType}
@@ -65,7 +67,8 @@ Search.propTypes = {
   colType: propTypes.string.isRequired,
   keywords: propTypes.array.isRequired,
   retrievedDocs: propTypes.array,
-  location: propTypes.object.isRequired
+  location: propTypes.object.isRequired,
+  isInternalLoading: propTypes.bool.isRequired
 }
 
 export default Search;

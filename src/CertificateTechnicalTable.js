@@ -12,25 +12,29 @@ function CertificateTechnicalTable(props) {
         searchCollection='projects'
         searchProperty={'partOf.' + documentId + '.id'}
         searchValue={documentId}
+        setIsInternalLoading={props.setIsInternalLoading}
       />
       <RemoteDataPoint
         parentCollection='certificates'
         searchCollection='snippets'
         searchProperty={'partOf.' + documentId + '.id'}
         searchValue={documentId}
+        setIsInternalLoading={props.setIsInternalLoading}
       />
       <RemoteDataPoint
         parentCollection='certificates'
         searchCollection='courses'
         searchProperty={'partOf.' + documentId + '.id'}
         searchValue={documentId}
+        setIsInternalLoading={props.setIsInternalLoading}
       />
     </section>
   )
 }
 
 CertificateTechnicalTable.propTypes = {
-  documentId: propTypes.string.isRequired
+  documentId: propTypes.string.isRequired,
+  setIsInternalLoading: propTypes.func.isRequired
 }
 
 export default CertificateTechnicalTable;

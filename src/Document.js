@@ -8,6 +8,7 @@ import LinksTable from './LinksTable';
 import TechnicalTable from './TechnicalTable'
 import Post from './Post'
 import NotFound from './NotFound';
+import InternalLoading from './InternalLoading'
 
 class Document extends Component {
   state = {
@@ -17,6 +18,7 @@ class Document extends Component {
   retrieveData = _ => {
     dbAPI.getDoc(this.props.parentCollection + '-heavy', this.props.documentId)
     .then(data => {
+      this.props.setIsExternalLoading(false);
       this.setState({doc: data ? data : '404'})
     })
 
@@ -29,6 +31,7 @@ class Document extends Component {
    * screen before this component loads
    */
   componentWillMount() {
+    this.props.setIsExternalLoading(true);
     this.retrieveData()
   }
 
@@ -71,8 +74,10 @@ class Document extends Component {
               <TechnicalTable
                 parentCollection={this.props.parentCollection}
                 documentId={this.props.documentId}
-                skills={doc.skills}/>
+                skills={doc.skills}
+                setIsInternalLoading={this.props.setIsInternalLoading}/>
               {doc.details && <Post postContent={doc.details}/>}
+              {this.props.isInternalLoading && <InternalLoading/>}
             </div>
           </main>
         </section>
@@ -83,7 +88,10 @@ class Document extends Component {
 
 Document.propTypes = {
   parentCollection: propTypes.string.isRequired,
-  documentId: propTypes.string.isRequired
+  documentId: propTypes.string.isRequired,
+  setIsExternalLoading: propTypes.func.isRequired,
+  setIsInternalLoading: propTypes.func.isRequired,
+  isInternalLoading: propTypes.bool.isRequired
 }
 
 export default Document;

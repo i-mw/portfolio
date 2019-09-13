@@ -10,13 +10,16 @@ function TechnicalTable(props) {
 
   return (
     parentCollection === 'courses' ?
-      <CourseTechnicalTable skills={skills} documentId={documentId}/>
+      <CourseTechnicalTable skills={skills} documentId={documentId}
+        setIsInternalLoading={props.setIsInternalLoading}/>
     :
       parentCollection === 'certificates' ?
-        <CertificateTechnicalTable documentId={documentId}/>
+        <CertificateTechnicalTable documentId={documentId}
+          setIsInternalLoading={props.setIsInternalLoading}/>
       :
         parentCollection === 'skills' ?
-          <SkillTechnicalTable documentId={documentId}/>
+          <SkillTechnicalTable documentId={documentId}
+          setIsInternalLoading={props.setIsInternalLoading}/>
         :
           <DefaultTechnicalTable skills={skills}/>
   )
@@ -25,7 +28,8 @@ function TechnicalTable(props) {
 TechnicalTable.propTypes = {
   parentCollection: propTypes.string.isRequired,
   documentId: propTypes.string,
-  skills: propTypes.object
+  skills: propTypes.object,
+  setIsInternalLoading: propTypes.func.isRequired
 }
 
 export default TechnicalTable;
