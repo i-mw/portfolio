@@ -9,32 +9,25 @@ import propTypes from 'prop-types';
 function ExternalLoading(props) {
   return (
     <div className="wrap-out" style={{display: "inline-block", position: "absolute",
-      zIndex: 1, top: "calc(50% - 35px)", left: "calc(50% - 35px)"}}>
+      zIndex: 1, top: "calc(50% - 12px)", left: "calc(50% - 26px)"}}>
       <div className="wrap-in" style={{border: 0, padding: 0}}>
-        <svg className="prefix__ldt-blank" width={70} height={19}
-            preserveAspectRatio="xMidYMid" style={{background: '0 0'}} {...props}>
-          <text fill="#435472" transform="translate(0 19)"
-                fontSize={32} className="ld ld-blink"
-                style={{animationDelay: "-0.7s", animationDuration: "2s",
-                        animationDirection: "normal",
-                        transformOrigin: "16.9062px 0px 0px"}}>
-            {'\u25A0'}
-          </text>
-          <text fill="#435472" transform="translate(25 19)"
-                fontSize={32} className="ld ld-blink"
-                style={{animationDelay: "-0.35s", animationDuration: "2s",
-                animationDirection: "normal",
-                transformOrigin: "16.9062px 0px 0px"}}>
-            {'\u25A0'}
-          </text>
-          <text fill="#435472" transform="translate(51 19)"
-                fontSize={32} className="ld ld-blink"
-                style={{animationDelay: "0s", animationDuration: "2s",
-                animationDirection: "normal",
-                transformOrigin: "16.9062px 0px 0px"}}>
-            {'\u25A0'}
-          </text>
-        </svg>
+        <div className="loading" style={{width: "52px", height: "12px"}}>
+          <div className="ld ld-blink"
+               style={{width: "12px", height: "12px",
+                       backgroundColor: "rgb(67, 84, 114)", float: "left",
+                       marginRight: "8px", animationDelay: "-0.7s",
+                       animationDuration: "2s", animationDirection: "normal"}}></div>
+          <div className="ld ld-blink"
+               style={{width: "12px", height: "12px",
+               backgroundColor: "rgb(67, 84, 114)", float: "left",
+               marginRight: "8px", animationDelay: "-0.35s",
+               animationDuration: "2s", animationDirection: "normal"}}></div>
+          <div className="ld ld-blink"
+               style={{width: "12px", height: "12px",
+               backgroundColor: "rgb(67, 84, 114)", float: "left",
+               marginRight: "0", animationDelay: "0s",
+               animationDuration: "2s", animationDirection: "normal"}}></div>
+        </div>
       </div>
     </div>
   )
