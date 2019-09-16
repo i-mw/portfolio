@@ -9,6 +9,7 @@ import TechnicalTable from './TechnicalTable'
 import Post from './Post'
 import NotFound from './NotFound';
 import InternalLoading from './InternalLoading'
+import NetworkError from './NetworkError'
 
 class Document extends Component {
   state = {
@@ -18,10 +19,16 @@ class Document extends Component {
   retrieveData = _ => {
     dbAPI.getDoc(this.props.parentCollection + '-heavy', this.props.documentId)
     .then(data => {
+      console.log(data);
       this.props.setIsExternalLoading(false);
+      this.props.setIsOnline(true);
       this.setState({doc: data ? data : '404'})
     })
-
+    .catch(error => {
+      if (error.message.indexOf('offline') > -1) {
+        this.props.setIsOnline(false);
+      }
+    })
   }
 
   /**
@@ -38,10 +45,18 @@ class Document extends Component {
   render() {
     const {doc} = this.state;
 
-    return(
-      doc === '404' ? <NotFound />
-      :
-      doc && (
+    if (doc === '404') {
+      return(<NotFound />)
+    }
+    else if (!doc && !this.props.isOnline){
+      return(
+        <section>
+          <NetworkError placement="network-error-inline"/>
+        </section>
+      )
+    }
+    else if (doc) {
+      return(
         <section>
           <Header type="doc" headline={doc.title}
             primaryLang={doc.primaryLanguage}
@@ -75,14 +90,19 @@ class Document extends Component {
                 parentCollection={this.props.parentCollection}
                 documentId={this.props.documentId}
                 skills={doc.skills}
-                setIsInternalLoading={this.props.setIsInternalLoading}/>
+                setIsInternalLoading={this.props.setIsInternalLoading}
+                setIsOnline={this.props.setIsOnline}/>
               {doc.details && <Post postContent={doc.details}/>}
-              {this.props.isInternalLoading && <InternalLoading/>}
+              {(this.props.isInternalLoading && this.props.isOnline) && <InternalLoading/>}
+              {!this.props.isOnline && <NetworkError placement="network-error-inline"/>}
             </div>
           </main>
         </section>
-      )
-    );
+      );        
+    }
+    else {
+      return('')
+    }
   }
 }
 
@@ -91,7 +111,9 @@ Document.propTypes = {
   documentId: propTypes.string.isRequired,
   setIsExternalLoading: propTypes.func.isRequired,
   setIsInternalLoading: propTypes.func.isRequired,
-  isInternalLoading: propTypes.bool.isRequired
+  isInternalLoading: propTypes.bool.isRequired,
+  setIsOnline: propTypes.func.isRequired,
+  isOnline: propTypes.bool.isRequired
 }
 
 export default Document;

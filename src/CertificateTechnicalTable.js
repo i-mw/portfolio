@@ -13,6 +13,7 @@ function CertificateTechnicalTable(props) {
         searchProperty={'partOf.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
       <RemoteDataPoint
         parentCollection='certificates'
@@ -20,6 +21,7 @@ function CertificateTechnicalTable(props) {
         searchProperty={'partOf.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
       <RemoteDataPoint
         parentCollection='certificates'
@@ -27,6 +29,7 @@ function CertificateTechnicalTable(props) {
         searchProperty={'partOf.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
     </section>
   )
@@ -34,7 +37,8 @@ function CertificateTechnicalTable(props) {
 
 CertificateTechnicalTable.propTypes = {
   documentId: propTypes.string.isRequired,
-  setIsInternalLoading: propTypes.func.isRequired
+  setIsInternalLoading: propTypes.func.isRequired,
+  setIsOnline: propTypes.func.isRequired
 }
 
 export default CertificateTechnicalTable;

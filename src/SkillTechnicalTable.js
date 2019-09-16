@@ -13,6 +13,7 @@ function SkillTechnicalTable(props) {
         searchProperty={'skills.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
       <RemoteDataPoint
         parentCollection='skills'
@@ -20,6 +21,7 @@ function SkillTechnicalTable(props) {
         searchProperty={'skills.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
       <RemoteDataPoint
         parentCollection='skills'
@@ -27,6 +29,7 @@ function SkillTechnicalTable(props) {
         searchProperty={'skills.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
       <RemoteDataPoint
         parentCollection='skills'
@@ -34,6 +37,7 @@ function SkillTechnicalTable(props) {
         searchProperty={'skills.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
     </section>
   )
@@ -41,7 +45,8 @@ function SkillTechnicalTable(props) {
 
 SkillTechnicalTable.propTypes = {
   documentId: propTypes.string.isRequired,
-  setIsInternalLoading: propTypes.func.isRequired
+  setIsInternalLoading: propTypes.func.isRequired,
+  setIsOnline: propTypes.func.isRequired
 }
 
 export default SkillTechnicalTable;

@@ -15,6 +15,7 @@ function CourseTechnicalTable(props) {
         searchProperty={'partOf.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
       <RemoteDataPoint
         parentCollection='courses'
@@ -22,6 +23,7 @@ function CourseTechnicalTable(props) {
         searchProperty={'partOf.' + documentId + '.id'}
         searchValue={documentId}
         setIsInternalLoading={props.setIsInternalLoading}
+        setIsOnline={props.setIsOnline}
       />
     </section>
   )
@@ -30,7 +32,8 @@ function CourseTechnicalTable(props) {
 CourseTechnicalTable.propTypes = {
   skills: propTypes.object.isRequired,
   documentId: propTypes.string.isRequired,
-  setIsInternalLoading: propTypes.func.isRequired
+  setIsInternalLoading: propTypes.func.isRequired,
+  setIsOnline: propTypes.func.isRequired
 }
 
 export default CourseTechnicalTable;

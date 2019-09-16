@@ -4,6 +4,7 @@ import SearchInput from './SearchInput'
 import SearchKeywords from './SearchKeywords'
 import SearchResults from './SearchResults'
 import InternalLoading from './InternalLoading'
+import NetworkError from './NetworkError'
 
 class Search extends Component {
   state = {
@@ -28,7 +29,7 @@ class Search extends Component {
   }
   
   render() {
-    const {colType, keywords, isInternalLoading} = this.props;
+    const {colType, keywords, isInternalLoading, isOnline} = this.props;
     const {searchTerm} = this.state;
 
     let filteredDocs = this.props.retrievedDocs ?
@@ -52,11 +53,13 @@ class Search extends Component {
             searchTerm={searchTerm}
             changeSearchTerm={this.changeSearchTerm}
           />
-          {isInternalLoading && <InternalLoading/>}
-          <SearchResults
-            filteredDocs={filteredDocs || this.props.retrievedDocs}
-            colType={colType}
-          />
+          {(isInternalLoading && isOnline ) && <InternalLoading/>}
+          {!isOnline && <NetworkError placement="network-error-inline"/>}
+          {this.props.retrievedDocs && (
+            <SearchResults
+              filteredDocs={filteredDocs || this.props.retrievedDocs}
+              colType={colType}
+          />)}
         </div>
       </main>
     );  
@@ -68,7 +71,8 @@ Search.propTypes = {
   keywords: propTypes.array.isRequired,
   retrievedDocs: propTypes.array,
   location: propTypes.object.isRequired,
-  isInternalLoading: propTypes.bool.isRequired
+  isInternalLoading: propTypes.bool.isRequired,
+  isOnline: propTypes.bool.isRequired
 }
 
 export default Search;

@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import * as dbAPI from './dbAPI.js';
 import Header from './Header';
 import AboutDetails from './AboutDetails';
+import NetworkError from './NetworkError'
 
 class About extends Component {
   state = {
@@ -12,7 +13,13 @@ class About extends Component {
   retrieveData = _ => {
     dbAPI.getDoc('about', 'main').then(data => {
       this.props.setIsExternalLoading(false);
+      this.props.setIsOnline(true)
       this.setState({main: data});
+    })
+    .catch(error => {
+      if (error.message.indexOf('offline') > -1) {
+        this.props.setIsOnline(false);
+      }
     })
   }
 
@@ -33,7 +40,7 @@ class About extends Component {
     const logoImageId = 'logoic';
 
     return(
-      this.state.main && (
+      this.state.main ? (
         <section>
           <Header type='about' headline={main.headline}
             logoText={main.textLogo}
@@ -41,13 +48,21 @@ class About extends Component {
             personalImage={main.images.find(image => image.id === personalImageId)}/>
           <AboutDetails details={main.details}/>
         </section>
+      ) :
+      (!this.props.isOnline && (
+        <section>
+          <NetworkError placement="network-error-inline"/>
+        </section>
+        )
       )
     );
   }
 }
 
 About.propTypes = {
-  setIsExternalLoading: propTypes.func.isRequired
+  setIsExternalLoading: propTypes.func.isRequired,
+  isOnline: propTypes.bool.isRequired,
+  setIsOnline: propTypes.func.isRequired
 }
 
 export default About;

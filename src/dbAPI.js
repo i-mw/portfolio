@@ -2,12 +2,22 @@ import db from './initialize-firestore.js';
 
 export const getDoc = (collection, document) => 
   db.collection(collection).doc(document).get()
-  .then(doc => doc.data());
+  .then(doc => {
+    if (doc.metadata.fromCache === true) {
+      throw {message: 'offline'};
+    }
+    return doc.data();
+  });
 
 export const getCollection = collection => {
   if (collection.indexOf('skills') > -1) {
     return db.collection(collection).get()
     .then(querySnapshot => {
+      /* making sure that the connection isn't offline
+         and firebase isn't trying to pull the data from the cache */
+      if (querySnapshot.metadata.fromCache === true) {
+        throw {message: 'offline'};
+      }
       let list = [];
       querySnapshot.forEach(doc => {list.push(doc.data())});
       return list;
@@ -16,6 +26,9 @@ export const getCollection = collection => {
   else {
     return db.collection(collection).orderBy('dates.startedAt', 'desc').get()
     .then(querySnapshot => {
+      if (querySnapshot.metadata.fromCache === true) {
+        throw {message: 'offline'};
+      }
       let list = [];
       querySnapshot.forEach(doc => {list.push(doc.data())});
       return list;
@@ -26,6 +39,9 @@ export const getCollection = collection => {
 export const getCustomCollection = (collection, propertyName, propertyValue) => 
   db.collection(collection).where(propertyName, '==', propertyValue)
   .get().then(querySnapshot => {
+    if (querySnapshot.metadata.fromCache === true) {
+      throw {message: 'offline'};
+    }
     let list = [];
     querySnapshot.forEach(doc => {list.push(doc.data())});
     list.sort((a,b) => {

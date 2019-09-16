@@ -137,7 +137,7 @@ nav {
     animation: ld-blink 1s infinite linear;
 }
 
-.network-error {
+.network-error-fixed {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -148,6 +148,11 @@ nav {
     text-align: center;
     color: white;
     background-color: #d45c51;
+}
+
+.network-error-inline {
+    text-align: center;
+    margin-top: 40px;
 }
 
 .no-match {
