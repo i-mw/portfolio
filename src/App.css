@@ -533,7 +533,7 @@ main.collection ul.search-results {
 
 main.collection ul.search-results li {
     width: 100%;
-    max-width: 385px;
+    max-width: 370px;
     display: inline-block;
     vertical-align: top;
     margin-bottom: 30px;
