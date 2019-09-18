@@ -554,8 +554,8 @@ main.collection ul.search-results li .image-container {
     right: 0;
     bottom: 0;
     z-index: 1;
-    background-size: cover;
-    background-position: center center;
+    background-size: auto auto;
+    background-position: top center;
     background-repeat: no-repeat;
 }
 
@@ -739,7 +739,8 @@ main.skills ul.search-results li .wrap-in {
 main.skills ul.search-results li .image-container {
     /* border: 1px dashed red; */
     bottom: 58px;
-    background-size: 40%;
+    background-size: auto auto;
+    background-position: center center;
 }
 
 
@@ -860,11 +861,16 @@ main.doc section {
     border-bottom: 1px solid rgb(211, 210, 210);
     height: 250px;
     text-indent: -9999px;
-    background-position: center center;
+    background-position: top center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto auto;
     /* TODO: remove css backgroun images */
     background-image: url(images/pax.png);
+}
+
+.doc.skills .jumbotron .screenshot a {
+    background-size: auto auto;
+    background-position: center center;
 }
 
 .jumbotron .summary {

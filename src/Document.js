@@ -61,7 +61,7 @@ class Document extends Component {
           <Header type="doc" headline={doc.title}
             primaryLang={doc.primaryLanguage}
             parentCollection={this.props.parentCollection}/>
-          <main className="doc">
+          <main className={this.props.parentCollection === 'skills' ? 'doc skills' : 'doc'}>
             <div className="container" tabIndex="-1">
               <Jumbo summary={doc.summary}
                 jumboImage={doc.images.find(image => image.placing === 'jumbo')}/>
