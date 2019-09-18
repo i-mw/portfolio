@@ -64,6 +64,7 @@ class Document extends Component {
           <main className={this.props.parentCollection === 'skills' ? 'doc skills' : 'doc'}>
             <div className="container" tabIndex="-1">
               <Jumbo summary={doc.summary}
+                colType={this.props.parentCollection}
                 jumboImage={doc.images.find(image => image.placing === 'jumbo')}/>
               {((doc.links && doc.links.preview) || 
                 (doc.links && doc.links.source) ||

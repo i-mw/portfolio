@@ -6,9 +6,17 @@ import {Link} from 'react-router-dom'
 function DocCard(props) {
   const {docData, colType} = props;
   const retrievedImage = docData.images && docData.images.find(image => image.placing === 'thumbnail').url;
-  const defaultImage = 'https://firebasestorage.googleapis.com/v0/b/' + 
-    'portfolio-v2-9ca05.appspot.com/o/placeholder.png?' +
-    'alt=media&token=97415612-b965-4f82-b608-adf77e574707';
+  let defaultImage = '';
+
+  if (colType === 'skills') {
+    defaultImage = 'https://firebasestorage.googleapis.com/v0/b/' + 
+      'portfolio-v2-9ca05.appspot.com/o/placeholders%2Fplaceholder-60.png?' + 
+      'alt=media&token=0bf1052d-f2af-4aad-ae73-c34c79da3130'
+  } else {
+    defaultImage = 'https://firebasestorage.googleapis.com/v0/b/' +
+      'portfolio-v2-9ca05.appspot.com/o/placeholders%2Fplaceholder-370*207.png?' +
+      'alt=media&token=930f87d8-974d-4d48-8012-c457f7a4afeb'
+  }
 
   const image = retrievedImage || defaultImage;
   if (docData.id === 'main') {
