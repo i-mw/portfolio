@@ -603,6 +603,7 @@ main.collection ul.search-results li .text {
     border-top: 2px solid rgb(211, 210, 210);
     padding-right: 10px;
     padding-left: 5px;
+    text-align: left;
 }
 
 main.collection ul.search-results li .text p {
@@ -722,6 +723,10 @@ main.collection ul.search-results li .wrap-in.focus-visible:focus .text p {
 */
 
 /* results */
+
+main.skills ul.search-results {
+    text-align: left;
+}
 
 main.skills ul.search-results li {
     width: 45%;
@@ -1248,6 +1253,10 @@ header.not-found .headline {
 
 
 @media screen and (min-width: 500px) {
+    main.collection ul.search-results {
+        text-align: left;
+    }
+
     main.collection ul.search-results li {
         width: calc(50% - 15px);
         display: inline-block;
