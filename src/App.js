@@ -5,7 +5,6 @@ import ExternalLoading from './ExternalLoading';
 import NetworkError from './NetworkError';
 
 function Loading(props) {
-    console.log(props);
     if(props.error) {
         return (
             <div>
