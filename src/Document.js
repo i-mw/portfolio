@@ -93,8 +93,8 @@ class Document extends Component {
                 skills={doc.skills}
                 setIsInternalLoading={this.props.setIsInternalLoading}
                 setIsOnline={this.props.setIsOnline}/>
-              {doc.details && <Post postContent={doc.details}/>}
               {(this.props.isInternalLoading && this.props.isOnline) && <InternalLoading/>}
+              {doc.details && <Post postContent={doc.details}/>}
               {!this.props.isOnline && <NetworkError placement="network-error-inline"/>}
             </div>
           </main>
