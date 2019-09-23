@@ -554,8 +554,10 @@ main.collection ul.search-results li .image-container {
     right: 0;
     bottom: 0;
     z-index: 1;
-    background-size: auto auto;
-    background-position: center center;
+    /* background-size: auto auto; */
+    background-size: contain;
+    /* background-position: center center; */
+    background-position: initial;
     background-repeat: no-repeat;
 }
 
