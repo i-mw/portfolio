@@ -1033,6 +1033,10 @@ main.doc section.routine {
  * details section
 */
 
+.doc .details {
+    margin-top: 40px;
+}
+
 .doc .details .wrap-in {
     padding: 20px;
     border-color: rgb(211, 210, 210);
@@ -1043,23 +1047,25 @@ main.doc section.routine {
     margin-bottom: 50px;
 }
 
-.doc .details h3 {
-    margin-bottom: 20px;
-    text-decoration: underline;
+.doc .details .writing-section:last-child {
+    margin-bottom: 0;
 }
 
-.doc .details h3:not(:first-of-type) {
-    margin-top: 40px;
+.doc .details h3 {
+    margin-bottom: 20px;
+    font-size: 1.3em;
 }
 
 .doc .details p {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
+    text-align: justify;
 }
 
 .doc .details img {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+
 
 
 
@@ -1272,7 +1278,32 @@ header.not-found .headline {
     main.skills ul.search-results li .wrap-in {
         height: initial;
         padding-bottom: calc(100% - 4px);
-    }        
+    }
+
+    /* Doc page */
+    /* Details section */
+
+    .doc .details .wrap-in {
+        padding: 28px 25px;
+    }
+    
+    .doc .details .writing-section {
+        margin-bottom: 55px;
+    }
+    
+    .doc .details h3 {
+        margin-bottom: 20px;
+    }
+    
+    .doc .details p {
+        margin-left: 22px;
+        margin-right: 22px;
+    }
+    
+    .doc .details img {
+        width: 85%;
+    }
+
 }
 
 
