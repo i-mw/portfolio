@@ -43,8 +43,6 @@ class Application extends Component {
       'courses', 'certificates', 'readings'];    
     const {isExternalLoading, isFirstLoad, isOnline} = this.state;
 
-    console.log('rendering app ------')
-
     return (
       <section>
         <AppLayout isExternalLoading={isExternalLoading}

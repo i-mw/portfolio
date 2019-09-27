@@ -19,7 +19,6 @@ class Document extends Component {
   retrieveData = _ => {
     dbAPI.getDoc(this.props.parentCollection + '-heavy', this.props.documentId)
     .then(data => {
-      console.log(data);
       this.props.setIsExternalLoading(false);
       this.props.setIsOnline(true);
       this.setState({doc: data ? data : '404'})
