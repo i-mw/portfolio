@@ -80,7 +80,7 @@ class Application extends Component {
                 />
               ))
             }
-            <Route component={NotFound}/>
+            <Route render={_ => <NotFound setIsExternalLoading={this.setIsExternalLoading}/>}/>
           </Switch>
           {!isOnline && <NetworkError placement="network-error-fixed"/>}
         </AppLayout>
