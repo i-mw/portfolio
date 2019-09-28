@@ -4,7 +4,7 @@ export const getDoc = (collection, document) =>
   db.collection(collection).doc(document).get()
   .then(doc => {
     if (doc.metadata.fromCache === true) {
-      throw {message: 'offline'};
+      throw new Error('offline');
     }
     return doc.data();
   });
@@ -16,7 +16,7 @@ export const getCollection = collection => {
       /* making sure that the connection isn't offline
          and firebase isn't trying to pull the data from the cache */
       if (querySnapshot.metadata.fromCache === true) {
-        throw {message: 'offline'};
+        throw new Error('offline');
       }
       let list = [];
       querySnapshot.forEach(doc => {list.push(doc.data())});
@@ -27,7 +27,7 @@ export const getCollection = collection => {
     return db.collection(collection).orderBy('dates.startedAt', 'desc').get()
     .then(querySnapshot => {
       if (querySnapshot.metadata.fromCache === true) {
-        throw {message: 'offline'};
+        throw new Error('offline');
       }
       let list = [];
       querySnapshot.forEach(doc => {list.push(doc.data())});
@@ -40,7 +40,7 @@ export const getCustomCollection = (collection, propertyName, propertyValue) =>
   db.collection(collection).where(propertyName, '==', propertyValue)
   .get().then(querySnapshot => {
     if (querySnapshot.metadata.fromCache === true) {
-      throw {message: 'offline'};
+      throw new Error('offline');
     }
     let list = [];
     querySnapshot.forEach(doc => {list.push(doc.data())});
