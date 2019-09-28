@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import propTypes from 'prop-types';
 import * as dbAPI from './dbAPI';
-import SearchResults from './SearchResults.js'
-import Search from './Search';
 import {Link} from 'react-router-dom'
 
 class RemoteDataPoint extends Component {

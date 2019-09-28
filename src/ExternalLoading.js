@@ -1,5 +1,4 @@
 import React from 'react';
-import propTypes from 'prop-types';
 
 /* This component and icon is absolutely designed and aligned
    And corresponds to loading a whole page, not an element in a page
@@ -31,10 +30,6 @@ function ExternalLoading(props) {
       </div>
     </div>
   )
-}
-
-ExternalLoading.propTypes = {
-
 }
 
 export default ExternalLoading;

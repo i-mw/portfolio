@@ -1,5 +1,4 @@
 import React from 'react';
-import propTypes from 'prop-types';
 
 /* This loading component and icon is floating after content
    And corresponds to loading parts or elements in a page, 
@@ -32,10 +31,6 @@ function InternalLoading(props) {
       </div>
     </div>
   )
-}
-
-InternalLoading.propTypes = {
-
 }
 
 export default InternalLoading;
