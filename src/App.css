@@ -495,7 +495,20 @@ main.collection .search input {
     font-size: 1em;
 }
 
-main.collection .search button {
+main.collection .search button.cancel-btn {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 120px;
+    top: 0;
+    background: none;
+    width: 45px;
+    height: 45px;
+    color: rgb(67, 84, 114);
+}
+
+main.collection .search button.search-btn {
     width:120px;
     border: 0;
     padding: 12px;
