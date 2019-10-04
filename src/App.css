@@ -491,6 +491,7 @@ main.collection .search input {
     display: inline-block;
     border: 0;
     padding: 12px;
+    padding-right: 46px;
     letter-spacing: 1px;
     font-size: 1em;
 }
