@@ -201,6 +201,8 @@ nav .logo {
 nav .logo a {
     display: block;
     padding: 8px;
+    height: 34px;
+    box-sizing: content-box;
 }
 
 nav .logo img {
@@ -792,10 +794,9 @@ nav.doc .container, footer.doc .container {
     margin-bottom: 20px;
 }
 
-.doc .go-to-parent img {
+.doc .go-to-parent svg {
     display: inline-block;
     vertical-align: middle;
-
 }
 
 .doc .go-to-parent p { 
