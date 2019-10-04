@@ -582,25 +582,6 @@ main.collection ul.search-results li .image-container {
     font-size: 14px;
 }
 
-/* projects custom images */
-/* TODO: to be removed after insertion
-    into corresponding inline style element */
-main.collection ul.search-results li:nth-of-type(1) .image-container{
-    background-image: url('images/pax.png');
-}
-
-main.collection ul.search-results li:nth-of-type(2) .image-container{
-    background-image: url('images/animal-card.png');
-}
-
-main.collection ul.search-results li:nth-of-type(3) .image-container{
-    background-image: url('images/apen-design.png');
-}
-
-main.collection ul.search-results li:nth-of-type(4) .image-container{
-    background-image: url('images/portfolio-design.png');
-}
-
 main.collection ul.search-results li .text {
     position: absolute;
     bottom: 0;
@@ -880,8 +861,6 @@ main.doc section {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: auto auto;
-    /* TODO: remove css backgroun images */
-    background-image: url(images/pax.png);
 }
 
 .doc.skills .jumbotron .screenshot a {
