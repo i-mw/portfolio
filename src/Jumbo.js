@@ -25,9 +25,7 @@ function Jumbo(props) {
     <section className="wrap-out jumbotron">
       <div className="wrap-in">
         <div className="screenshot">
-          <a tabIndex="-1" href={image}
-            style={{backgroundImage: "url(" + image + ")"}}
-            target="_blank" title="jumbo image">jumbo image</a>
+          <div style={{backgroundImage: "url(" + image + ")"}}>jumbo image</div>
         </div>
         {summary && <Summary summaryContent={summary[0].content}/>}
       </div>

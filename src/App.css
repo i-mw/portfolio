@@ -870,7 +870,7 @@ main.doc section {
     z-index: 1;
 }
 
-.doc .jumbotron .screenshot a {
+.doc .jumbotron .screenshot div {
     display: block;
     border-bottom: 1px solid rgb(211, 210, 210);
     height: 250px;
@@ -880,7 +880,7 @@ main.doc section {
     background-size: auto auto;
 }
 
-.doc.skills .jumbotron .screenshot a {
+.doc.skills .jumbotron .screenshot div {
     background-size: auto auto;
     background-position: center center;
 }
