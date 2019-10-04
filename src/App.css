@@ -946,7 +946,7 @@ main.doc section.routine {
     top: 5px;
     left: -6px;
     bottom: 12px;
-    background: rgb(235, 249, 255);
+    /* background: rgb(235, 249, 255); */
     z-index: 1;
 }
 
@@ -958,7 +958,7 @@ main.doc section.routine {
 }
 
 .routine li.wrap-out::before {
-    background: none;
+    /* background: none; */
 }
 
 .routine .wrap-in {
