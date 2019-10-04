@@ -506,7 +506,7 @@ main.collection .search button {
 /* search keywords */
 
 main.collection ul.search-keywords {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     position: relative;
     z-index: 1;
 }
@@ -545,7 +545,9 @@ main.collection ul.search-results li {
     max-width: 370px;
     display: inline-block;
     vertical-align: top;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 main.collection ul.search-results li .wrap-in {
@@ -1249,7 +1251,9 @@ header.not-found .headline {
         width: calc(50% - 15px);
         display: inline-block;
         vertical-align: top;
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
     main.collection ul.search-results li:nth-of-type(odd) {

@@ -9,19 +9,21 @@ function SearchInput(props) {
   } = props;
 
   return (
-    <ul className="search-keywords">
-      { 
-        keywords.map(keyword => (
-          <li className="wrap-out" key={keyword}>
-            <p tabIndex="0" className = {
-                keyword === searchTerm ? "wrap-in active-keyword" : "wrap-in"}
-                onClick={event => changeSearchTerm(keyword)}>
-            {keyword}
-            </p>
-          </li>
-        ))
-      }
-    </ul>
+    (keywords && keywords.length > 0) && (
+      <ul className="search-keywords">
+        { 
+          keywords.map(keyword => (
+            <li className="wrap-out" key={keyword}>
+              <p tabIndex="0" className = {
+                  keyword === searchTerm ? "wrap-in active-keyword" : "wrap-in"}
+                  onClick={event => changeSearchTerm(keyword)}>
+              {keyword}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    )
   );
 }
 
