@@ -6,27 +6,37 @@ import {Link} from 'react-router-dom'
 class RemoteDataPoint extends Component {
   state = {
     remoteCol: []
-}
+  }
+
+  _isMounted = false;
 
   componentDidMount() {
+    this._isMounted = true;
     this.props.setIsInternalLoading(true);
     this.RetrieveCollection();
   }
 
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   RetrieveCollection = _ => {
     const {searchCollection, searchProperty, searchValue} = this.props;
-    dbAPI.getCustomCollection(searchCollection + '-heavy', searchProperty, searchValue)
-      .then(col => {
-        this.props.setIsInternalLoading(false);
-        this.props.setIsOnline(true);
-        this.setState({remoteCol: col})
-      })
-      .catch(error => {
-        if (error.message.indexOf('offline') > -1) {
-          this.props.setIsOnline(false);
-        }
-      })
-  
+    if (this._isMounted) {
+      dbAPI.getCustomCollection(searchCollection + '-heavy', searchProperty, searchValue)
+        .then(col => {
+          this.props.setIsInternalLoading(false);
+          this.props.setIsOnline(true);
+          if (this._isMounted) {
+            this.setState({remoteCol: col})
+          }
+        })
+        .catch(error => {
+          if (error.message.indexOf('offline') > -1) {
+            this.props.setIsOnline(false);
+          }
+        })
+    }
   }
 
   render() {

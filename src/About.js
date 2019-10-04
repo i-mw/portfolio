@@ -10,28 +10,41 @@ class About extends Component {
     main: null
   }
 
+  _isMounted = false;
+
   retrieveData = _ => {
-    dbAPI.getDoc('about', 'main').then(data => {
-      this.props.setIsExternalLoading(false);
-      this.props.setIsOnline(true)
-      this.setState({main: data});
-    })
-    .catch(error => {
-      if (error.message.indexOf('offline') > -1) {
-        this.props.setIsOnline(false);
-      }
-    })
+    if (this._isMounted) {
+      dbAPI.getDoc('about', 'main').then(data => {
+        this.props.setIsExternalLoading(false);
+        this.props.setIsOnline(true)
+        if (this._isMounted) {
+          this.setState({main: data});
+        }
+      })
+      .catch(error => {
+        if (error.message.indexOf('offline') > -1) {
+          this.props.setIsOnline(false);
+        }
+      })
+    }
   }
 
   /**
-   * @description componentWillMount used instead of componentDidMount
+   * @description todo: remove this description
+   * (old description) xxxx  componentWillMount used instead of
+   * componentDidMount
    * because this component (About component) will be called asynchronously
    * via 'react-loadable' module, thus there already will be content on user
-   * screen before this component loads
+   * screen before this component loads  xxxxxx
    */
-  componentWillMount() {
+  componentDidMount() {
+    this._isMounted = true;
     this.props.setIsExternalLoading(true);
     this.retrieveData()
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

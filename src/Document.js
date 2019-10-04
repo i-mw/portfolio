@@ -16,29 +16,41 @@ class Document extends Component {
     doc: null
   }
 
+  _isMounted = false;
+
   retrieveData = _ => {
-    dbAPI.getDoc(this.props.parentCollection + '-heavy', this.props.documentId)
-    .then(data => {
-      this.props.setIsExternalLoading(false);
-      this.props.setIsOnline(true);
-      this.setState({doc: data ? data : '404'})
-    })
-    .catch(error => {
-      if (error.message.indexOf('offline') > -1) {
-        this.props.setIsOnline(false);
-      }
-    })
+    if (this._isMounted) {
+      dbAPI.getDoc(this.props.parentCollection + '-heavy', this.props.documentId)
+      .then(data => {
+        this.props.setIsExternalLoading(false);
+        this.props.setIsOnline(true);
+        if (this._isMounted) {
+          this.setState({doc: data ? data : '404'})
+        }
+      })
+      .catch(error => {
+        if (error.message.indexOf('offline') > -1) {
+          this.props.setIsOnline(false);
+        }
+      })
+    }
   }
 
   /**
-   * @description componentWillMount used instead of componentDidMount
+   * @description todo: remove this description
+   * componentWillMount used instead of componentDidMount
    * because this component (Document component) will be called asynchronously
    * via 'react-loadable' module, thus there already will be content on user
    * screen before this component loads
    */
-  componentWillMount() {
+  componentDidMount() {
+    this._isMounted = true;
     this.props.setIsExternalLoading(true);
     this.retrieveData()
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {
