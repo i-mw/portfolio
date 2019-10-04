@@ -5,7 +5,7 @@ function Logo(props) {
   return (
     <div className="logo wrap-out">
       <div className="wrap-in">
-        <img src={props.image.url} alt={props.image.caption}/>
+        <img src={props.logoImage.url} alt={props.logoImage.caption}/>
         {/* <pre dangerouslySetInnerHTML={{__html: props.logoText}}></pre> */}
       </div>
     </div>
@@ -13,7 +13,8 @@ function Logo(props) {
 }
 
 Logo.propTypes = {
-  logoText: propTypes.string.isRequired
+  logoText: propTypes.string.isRequired,
+  logoImage: propTypes.object.isRequired
 }
 
 export default Logo;
