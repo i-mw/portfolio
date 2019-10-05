@@ -50,7 +50,8 @@ class RemoteDataPoint extends Component {
         <div className="pointSection">
           <h2>{
             parentCollection !== 'skills' ?
-              searchCollection
+              searchCollection.charAt(0).toUpperCase() +
+              searchCollection.split('').slice(1, searchCollection.length).join("")
               :
               searchCollection === 'projects' ||
               searchCollection === 'snippets' ?
