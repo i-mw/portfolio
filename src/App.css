@@ -433,6 +433,29 @@ footer p {
     display: inline-block;
     padding-top: 10px;
     padding-bottom: 10px;
+    vertical-align: middle;
+}
+
+footer p.social-links {
+    /* height: 40px; */
+    padding: 0;
+    padding-left: 8px;
+    text-align: center;
+}
+
+footer p.social-links a {
+    margin-right: 8px;
+    display: inline-block;
+}
+
+footer p.social-links a:last-child {
+    /* margin-right: 0; */
+}
+
+footer p.social-links a svg {
+    vertical-align: top;
+    box-sizing: content-box;
+    padding: 10px;
 }
 
 
@@ -1130,7 +1153,16 @@ header.not-found .headline {
     header .personal-photo .wrap-in {
         width: 100px;
         height: 100px;
-    }  
+    }
+
+    /* footer */
+    footer p.social-links {
+        padding-left: 15px;
+    }
+
+    footer p.social-links a {
+        margin-right: 15px;
+    }
 }
 
 
@@ -1162,7 +1194,7 @@ header.not-found .headline {
     header .personal-photo .wrap-in {
         width: 120px;
         height: 120px;
-    }    
+    }
 }
 
 @media screen and (min-width: 351px) {
@@ -1212,7 +1244,21 @@ header.not-found .headline {
     .doc .links ul li a.wrap-in:hover,
     .doc .links ul li a.wrap-in.focus-visible:focus {
         background: whitesmoke;
-    }    
+    }
+
+    /* footer */
+    footer p.social-links {
+        height: 40px;
+        padding: 0;
+    }
+    
+    footer p.social-links a {
+        margin-right: 13px;
+    }
+    
+    footer p.social-links a:last-child {
+        margin-right: 0;
+    }
 }
 
 @media screen and (min-width: 410px) {
@@ -1392,6 +1438,10 @@ header.not-found .headline {
     footer p:last-of-type {
         text-align: right;
         width: 40%;
+    }
+
+    footer p.social-links a {
+        margin-right: 3px;
     }
 }
 
