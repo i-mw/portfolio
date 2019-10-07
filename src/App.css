@@ -1462,5 +1462,10 @@ header.not-found .headline {
         /* max-width:  350px; */
         /* float: right; */
     }
+
+    /* footer */
+    footer p.social-links a {
+        margin-right: 0;
+    }
 }
 
