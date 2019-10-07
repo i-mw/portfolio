@@ -214,6 +214,7 @@ nav .logo a.focus-visible:focus {
     outline-width: 0px;
     background: white;
     border-bottom: 3px solid rgb(211, 210, 210);
+    transition-duration: 0.2s;
 }
 
 /* hamburger icon */
@@ -229,6 +230,7 @@ nav .hamburger.focus-visible:focus {
     outline-width: 0px;
     background: white;
     border-bottom: 3px solid rgb(211, 210, 210);
+    transition-duration: 0.2s;
 }
 
 /* navigation list */
@@ -261,6 +263,7 @@ nav ul li a:hover,
 nav ul li a.focus-visible:focus {
     outline-width: 0;
     background: #fff;
+    transition-duration: 0.2s;
 }
 
 
@@ -567,6 +570,7 @@ main.collection ul.search-keywords li p.wrap-in {
 main.collection ul.search-keywords li p.wrap-in:hover,
 main.collection ul.search-keywords li p.wrap-in.focus-visible:focus {
     background: whitesmoke;
+    transition-duration: 0.2s;
 }
 
 .active-keyword {
@@ -691,11 +695,30 @@ main.collection ul.search-results li .text p {
     background: #89e051;
 }
 
+main.collection ul.search-results li .wrap-in::before,
+main.collection ul.search-results li .wrap-in.focus-visible::before {
+    content: '< view >';
+    position: absolute;
+    top: calc(50% - 9px - 16px);
+    left: calc(50% - 37.8px);
+    z-index: 3;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: initial;
+    font-weight: initial;
+    display: initial;
+    opacity: 0;
+    color: white;
+    background: #435472;
+}
+
 /* hover & focus effects */
 main.collection ul.search-results li .wrap-in:hover,
 main.collection ul.search-results li .wrap-in.focus-visible:focus {
     border-color: #435472;
     outline: 0;
+    transition-duration: 0.4s;
 }
 
 main.collection ul.search-results li .wrap-in:hover .image-container::before,
@@ -709,40 +732,33 @@ main.collection ul.search-results li .wrap-in.focus-visible:focus
     right: 0;
     bottom: 0;
     background: rgba(216, 208, 208, 0.541);
+    transition-duration: 0.4s;
 }
 
 main.collection ul.search-results li .wrap-in:hover::before,
 main.collection ul.search-results li .wrap-in.focus-visible:focus::before {
-    content: '< view >';
-    position: absolute;
-    top: calc(50% - 9px - 16px);
-    left: calc(50% - 37.8px);
-    z-index: 3;
-    padding: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
-    color: white;
-    background: #435472;
-    display: initial;
-    width: initial;
-    font-weight: initial;
+    opacity: 1;
+    transition-duration: 0.4s;
 }
 
 main.collection ul.search-results li .wrap-in:hover .image-container::after,
 main.collection ul.search-results li .wrap-in.focus-visible:focus
     .image-container::after {
     border-color: #435472;
+    transition-duration: 0.4s;
 }
 
 main.collection ul.search-results li .wrap-in:hover .text,
 main.collection ul.search-results li .wrap-in.focus-visible:focus .text {
     border-color: #435472;
     background-color: #435472;
+    transition-duration: 0.4s;
 }
 
 main.collection ul.search-results li .wrap-in:hover .text p,
 main.collection ul.search-results li .wrap-in.focus-visible:focus .text p {
     color: white;
+    transition-duration: 0.4s;
 }
 
 
@@ -946,6 +962,7 @@ main.doc section {
 .doc .links ul li a.wrap-in:hover,
 .doc .links ul li a.wrap-in.focus-visible:focus {
     background: whitesmoke;
+    transition-duration: 0.2s;
 }
 
 
@@ -1057,6 +1074,7 @@ main.doc section.routine {
 .pointSection li a.wrap-in:hover,
 .pointSection li a.wrap-in:focus {
     background: whitesmoke;
+    transition-duration: 0.2s;
 }
 
 
@@ -1244,6 +1262,7 @@ header.not-found .headline {
     .doc .links ul li a.wrap-in:hover,
     .doc .links ul li a.wrap-in.focus-visible:focus {
         background: whitesmoke;
+        transition-duration: 0.2s;
     }
 
     /* footer */
@@ -1427,6 +1446,7 @@ header.not-found .headline {
     nav ul li a.focus-visible:focus {
         outline-width: 0px;
         border-bottom: 3px solid rgb(211, 210, 210);
+        transition-duration: 0.2s;
     }
 
     /* footer */
