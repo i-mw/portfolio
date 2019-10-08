@@ -212,10 +212,36 @@ nav .logo img {
 nav .logo a:hover,
 nav .logo a.focus-visible:focus {
     outline-width: 0px;
-    background: white;
+    /* background: white; */
     border-bottom: 3px solid rgb(211, 210, 210);
     transition-duration: 0.2s;
 }
+
+/* Make nav logo negative on hover or focus */
+
+/* nav .logo a:hover svg > g > g > g:first-of-type > use,
+nav .logo a.focus-visible:focus svg > g > g > g:first-of-type > use {
+    fill: white;
+}
+
+nav .logo a:hover svg > g > g > g:first-of-type > g > use,
+nav .logo a.focus-visible:focus svg > g > g > g:first-of-type > g > use {
+    stroke: white;
+}
+
+nav .logo a:hover svg > g > g > g:nth-child(2) > use,
+nav .logo a:hover svg > g > g > g:nth-child(3) > use,
+nav .logo a.focus-visible:focus svg > g > g > g:nth-child(2) > use,
+nav .logo a.focus-visible:focus svg > g > g > g:nth-child(3) > use {
+    fill: #435472;
+}
+
+nav .logo a:hover svg > g > g > g:nth-child(2) > g > use,
+nav .logo a:hover svg > g > g > g:nth-child(3) > g > use,
+nav .logo a.focus-visible:focus svg > g > g > g:nth-child(2) > g > use,
+nav .logo a.focus-visible:focus svg > g > g > g:nth-child(3) > g > use {
+    stroke: #435472;
+} */
 
 /* hamburger icon */
 nav .hamburger {
@@ -228,9 +254,9 @@ nav .hamburger {
 nav .hamburger:hover,
 nav .hamburger.focus-visible:focus {
     outline-width: 0px;
-    background: white;
+    /* background: white; */
     border-bottom: 3px solid rgb(211, 210, 210);
-    transition-duration: 0.2s;
+    /* transition-duration: 0.2s; */
 }
 
 /* navigation list */
@@ -1414,6 +1440,11 @@ header.not-found .headline {
 
     nav .hamburger {
         display: none;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.focus-visible:focus {
+        background: initial;
     }
 
     .hidden {
