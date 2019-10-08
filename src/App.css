@@ -256,7 +256,7 @@ nav .hamburger.focus-visible:focus {
     outline-width: 0px;
     /* background: white; */
     border-bottom: 3px solid rgb(211, 210, 210);
-    /* transition-duration: 0.2s; */
+    transition-duration: 0.1s;
 }
 
 /* navigation list */
