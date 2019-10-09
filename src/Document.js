@@ -36,13 +36,6 @@ class Document extends Component {
     }
   }
 
-  /**
-   * @description todo: remove this description
-   * componentWillMount used instead of componentDidMount
-   * because this component (Document component) will be called asynchronously
-   * via 'react-loadable' module, thus there already will be content on user
-   * screen before this component loads
-   */
   componentDidMount() {
     this._isMounted = true;
     this.props.setIsExternalLoading(true);

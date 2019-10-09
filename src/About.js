@@ -29,14 +29,6 @@ class About extends Component {
     }
   }
 
-  /**
-   * @description todo: remove this description
-   * (old description) xxxx  componentWillMount used instead of
-   * componentDidMount
-   * because this component (About component) will be called asynchronously
-   * via 'react-loadable' module, thus there already will be content on user
-   * screen before this component loads  xxxxxx
-   */
   componentDidMount() {
     this._isMounted = true;
     this.props.setIsExternalLoading(true);
