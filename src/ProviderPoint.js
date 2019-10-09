@@ -9,7 +9,7 @@ function ProviderPoint(props) {
       <div className="wrap-in">
         <p>Provider:</p>
         <div className="answer">
-          <p><a href={provider.link}>{provider.title}</a></p>
+          <p><a target="blank" href={provider.link}>{provider.title}</a></p>
         </div>
       </div>
     </li>
