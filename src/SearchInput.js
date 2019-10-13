@@ -7,11 +7,11 @@ function SearchInput(props) {
   return (
     <div className="search wrap-out">
       <div className="wrap-in">
-        <input placeholder={"search my " + colType} type="text" name="search"
+        <input aria-labelledby="search-btn" placeholder={"search my " + colType} type="text" name="search"
           value={searchTerm} onChange={event => changeSearchTerm(event.target.value)}
           onKeyDown={event => event.keyCode === 13 && (changeSearchTerm(event.target.value))} 
         />
-        <button className="search-btn" onClick={
+        <button className="search-btn" id="search-btn" onClick={
           event => changeSearchTerm(document.querySelector('.search input').value)}>
             Search
         </button>
