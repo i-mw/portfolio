@@ -1,3 +1,18 @@
+/* Under development Temp message */
+.under-develop-message {
+    display: inline-block;
+    padding: 7px;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    background-color: rgb(255, 212, 212);
+}
+
+
+
+
+
 /*
  *
  * Home Page

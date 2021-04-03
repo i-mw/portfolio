@@ -21,6 +21,13 @@ function Header(props) {
     /* type is equal to one of these: about, collection, doc, not-found */
     <header className={type}>
       <div className="container">
+        {/* Temporary under development message. Remove later. */}
+        {logoImage &&
+          <div className="under-develop-message">
+            <p>This portfolio is still under development.</p>
+            <p>So, you might stumble by some lorem ipsum content</p>
+          </div>
+        }
         {parentCollection && <GoToParent parentCollection={parentCollection}/>}
         {logoImage && <Logo logoImage={logoImage} logoText={logoText}/>}
         {personalImage && <PersonalPhoto image={personalImage}/>}
