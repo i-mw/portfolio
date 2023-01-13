@@ -42,6 +42,7 @@ class Nav extends Component {
                   <svg viewBox="0 0 24 24" enableBackground="new 0 0 24 24" width="24px" height="24px"><g><path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" fill="#435472" /><path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" fill="#435472" /><path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" fill="#435472" /></g></svg>
               </div>
               <ul className="hidden"><li>
+                <Link to='/designs' onClick={this.hideNavMenu}>Designs</Link></li><li>
                 <Link to='/projects' onClick={this.hideNavMenu}>PROJECTS</Link></li><li>
                 <Link to="/snippets" onClick={this.hideNavMenu}>SNIPPETS</Link></li><li>
                 <Link to="/skills" onClick={this.hideNavMenu}>SKILLS</Link></li><li>
